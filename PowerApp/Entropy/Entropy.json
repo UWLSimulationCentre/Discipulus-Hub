@@ -55,7 +55,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "11/26/2023 14:34:43",
+  "HeaderLastSavedDateTimeUTC": "11/26/2023 14:48:42",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "1500461b-b2d8-4aac-aa75-0b802ca0d5c4": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/68fe2bee824c408a981905a880866d62\"",
@@ -275,7 +275,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.2511347,
+    "AnalysisLoadTime": 0.2601539,
     "ControlCount": {
       "BarcodeReader": 1,
       "gallery": 4,
@@ -288,7 +288,7 @@
       "rectangle": 8,
       "screen": 1
     },
-    "DeserializationLoadTime": 0.6744834
+    "DeserializationLoadTime": 0.6717548
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

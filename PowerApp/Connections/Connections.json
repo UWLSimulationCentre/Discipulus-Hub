@@ -28,9 +28,7 @@
       "Announcements List"
     ],
     "dependencies": {},
-    "dependents": [
-      "e3db6dac-5264-404d-afff-169c40e6385d"
-    ],
+    "dependents": [],
     "id": "1500461b-b2d8-4aac-aa75-0b802ca0d5c4"
   },
   "21f102fb-67e5-4d25-930e-16b14afa2455": {
@@ -84,63 +82,5 @@
     },
     "dependents": [],
     "id": "2856c4af-18a1-46da-af7a-8ca661035a40"
-  },
-  "4ede76b4-ccb6-4e87-b079-8b28b9f86ee5": {
-    "appActions": [
-      "MyProfile"
-    ],
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Office 365 Users",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/office365users/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
-      "parameterHints": {},
-      "parameterHintsV2": {}
-    },
-    "datasets": {},
-    "dataSources": [
-      "Office365Users"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "4ede76b4-ccb6-4e87-b079-8b28b9f86ee5"
-  },
-  "e3db6dac-5264-404d-afff-169c40e6385d": {
-    "appActions": [
-      "Run"
-    ],
-    "connectionRef": {
-      "apiTier": "Standard",
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "1500461b-b2d8-4aac-aa75-0b802ca0d5c4": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "eb4cfcbd-b304-41b4-b290-e7fcb5e72dd7"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "1500461b-b2d8-4aac-aa75-0b802ca0d5c4"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "eb4cfcbd-b304-41b4-b290-e7fcb5e72dd7"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "SimulationCentre-CreateAttendance"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "1500461b-b2d8-4aac-aa75-0b802ca0d5c4"
-    },
-    "dependents": [],
-    "id": "e3db6dac-5264-404d-afff-169c40e6385d"
   }
 }

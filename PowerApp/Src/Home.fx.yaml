@@ -8,12 +8,14 @@ Home As screen:
         ZIndex: =1
 
         "Uniform1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            AccessibleLabel: ="Backend Gallery"
             DelayItemLoading: =true
             Height: =56
             Items: ='Student Hub - Document List'
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =Set(varUniformView,true)
+            TabIndex: =0
             TemplatePadding: =0
             TemplateSize: =90
             Visible: =false
@@ -44,7 +46,7 @@ Home As screen:
                 PaddingLeft: =0
                 PaddingRight: =0
                 PaddingTop: =0
-                Text: =ThisItem.'Has attachments'
+                Text: =ThisItem.Category.Value
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title2.Width
                 X: =Title2.X
@@ -82,11 +84,13 @@ Home As screen:
                 ZIndex: =5
 
         "Uniform2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+            AccessibleLabel: ="Backend Gallery"
             DelayItemLoading: =true
             Height: =225
             Items: =Uniform1.Selected.Attachments
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            TabIndex: =0
             TemplatePadding: =0
             TemplateSize: =80
             Visible: =false
@@ -149,10 +153,12 @@ Home As screen:
         FeedbackText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: |-
                 =Launch("https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL/SitePages/Simulation-Centre-Improvements.aspx")
             Size: =21
+            TabIndex: =0
             Text: ="Centre Feedback & Evaluation"
             Width: =575
             ZIndex: =1
@@ -168,10 +174,12 @@ Home As screen:
         safemedtext As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: |-
                 =Launch("https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL/SitePages/Mandatory-Training.aspx#safemedicate")
             Size: =21
+            TabIndex: =0
             Text: ="SafeMedicate Support"
             Width: =575
             ZIndex: =1
@@ -187,9 +195,11 @@ Home As screen:
         safemedtext_1 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: =Set(varTourView,true)
             Size: =21
+            TabIndex: =0
             Text: ="Interactive Tours"
             Width: =575
             ZIndex: =1
@@ -209,10 +219,12 @@ Home As screen:
             BorderThickness: =2
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(152, 64, 99, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: |-
                 =Launch("https://app.lapentor.com/sphere/uwl-simulation-centre-london")
             Size: =21
+            TabIndex: =0
             Text: ="London Campus"
             Width: =287.5
             ZIndex: =1
@@ -223,20 +235,24 @@ Home As screen:
             BorderThickness: =2
             Color: =RGBA(255, 255, 255, 1)
             Fill: =RGBA(152, 64, 99, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: |-
                 =Launch("https://app.lapentor.com/sphere/uwl-simulation-centre-reading")
             Size: =21
+            TabIndex: =0
             Text: ="Reading Campus"
             Width: =287.5
             X: =287
             ZIndex: =2
 
     Icon3 As icon.CancelBadge:
+        AccessibleLabel: ="Cancel Button"
         Color: =RGBA(246, 70, 104, 1)
         Height: =38
         Icon: =Icon.CancelBadge
         OnSelect: =Set(varTourView,false)
+        TabIndex: =0
         Visible: =varTourView
         Width: =40
         X: =16
@@ -254,10 +270,12 @@ Home As screen:
         SupportText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: |-
                 =Launch("https://uwloffice365live.sharepoint.com/sites/NursingStudentSite")
             Size: =21
+            TabIndex: =0
             Text: ="Student Support"
             Width: =575
             ZIndex: =1
@@ -273,9 +291,11 @@ Home As screen:
         UniformText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: =Set(varUniformView,true);Set(varAnnouncementVisible,false)
             Size: =21
+            TabIndex: =0
             Text: ="Uniform Policy"
             Width: =575
             ZIndex: =1
@@ -291,9 +311,11 @@ Home As screen:
         AlgText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             OnSelect: =Set(varAlgorithmView,true);Set(varAnnouncementVisible,false)
             Size: =21
+            TabIndex: =0
             Text: ="Algorithms & Guidelines"
             Width: =575
             ZIndex: =1
@@ -309,8 +331,10 @@ Home As screen:
         CentreSignIn_Label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             Height: =70
             Size: =21
+            TabIndex: =0
             Text: ="Centre Sign-In System (COMING SOON)"
             Width: =575
             ZIndex: =1
@@ -332,27 +356,33 @@ Home As screen:
             ZIndex: =3
 
     TopBar_UniformBack As icon.CancelBadge:
+        AccessibleLabel: ="Back Button"
         Color: =RGBA(246, 70, 104, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Set(varUniformView,false)
+        TabIndex: =0
         Visible: =varUniformView
         X: =16
         Y: =19
         ZIndex: =12
 
     TopBar_AlgorithmBack As icon.CancelBadge:
+        AccessibleLabel: ="Back Button"
         Color: =RGBA(246, 70, 104, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Set(varAlgorithmView,false);Set(varUniformView,false)
+        TabIndex: =0
         Visible: =varAlgorithmView
         X: =16
         Y: =19
         ZIndex: =13
 
     TopBar_PDFBack As icon.CancelBadge:
+        AccessibleLabel: ="Back Button"
         Color: =RGBA(246, 70, 104, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Set(varAlgorithmViewPDF,false)
+        TabIndex: =0
         Visible: =varAlgorithmViewPDF
         X: =16
         Y: =19
@@ -367,12 +397,14 @@ Home As screen:
         ZIndex: =16
 
         "Algorithm1 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
+            AccessibleLabel: ="Backend Gallery"
             DelayItemLoading: =true
             Height: =1033
             Items: =Filter('Student Hub - Document List',Category.Value="Algorithm")
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             OnSelect: =Set(varAlgorithmViewPDF,true);
+            TabIndex: =0
             TemplatePadding: =0
             TemplateSize: =80
             ZIndex: =1
@@ -469,11 +501,13 @@ Home As screen:
                 ZIndex: =7
 
         "Algorithm2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+            AccessibleLabel: ="Backend Gallery"
             DelayItemLoading: =true
             Height: =401
             Items: =Algorithm1.Selected.Attachments
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            TabIndex: =0
             TemplatePadding: =0
             TemplateSize: =80
             Visible: =false
@@ -558,9 +592,12 @@ Home As screen:
             ZIndex: =3
 
             BottomBar_ReportBug As icon.Bug:
+                AccessibleLabel: ="Report Bug"
+                FocusedBorderThickness: =1
                 Height: =52
                 Icon: =Icon.Bug
                 OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,true);Set(varSupportRequest,false)
+                TabIndex: =0
                 Width: =49
                 X: =53
                 Y: =15
@@ -568,9 +605,11 @@ Home As screen:
 
             Label1 As label:
                 Align: =Align.Center
+                FocusedBorderThickness: =1
                 Height: =30
                 OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,true);Set(varSupportRequest,false)
                 Size: =14
+                TabIndex: =0
                 Text: ="Report an Issue"
                 Width: =147
                 X: =4
@@ -585,9 +624,12 @@ Home As screen:
             ZIndex: =5
 
             BottomBar_ReportBug_1 As icon.Bug:
+                AccessibleLabel: ="Make Suggestion"
+                FocusedBorderThickness: =1
                 Height: =52
                 Icon: =Icon.Mail
                 OnSelect: =Set(varMakeSuggestion,true);Set(varReportIssue,false);Set(varSupportRequest,false)
+                TabIndex: =0
                 Width: =49
                 X: =533
                 Y: =15
@@ -595,9 +637,11 @@ Home As screen:
 
             Label1_1 As label:
                 Align: =Align.Center
+                FocusedBorderThickness: =1
                 Height: =30
                 OnSelect: =Set(varMakeSuggestion,true);Set(varReportIssue,false);Set(varSupportRequest,false)
                 Size: =14
+                TabIndex: =0
                 Text: ="Make Suggestion"
                 Width: =161
                 X: =477
@@ -612,9 +656,12 @@ Home As screen:
             ZIndex: =7
 
             BottomBar_ReportBug_2 As icon.Bug:
+                AccessibleLabel: ="Request Support"
+                FocusedBorderThickness: =1
                 Height: =52
                 Icon: =Icon.Support
                 OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,false);Set(varSupportRequest,true)
+                TabIndex: =0
                 Width: =49
                 X: =293
                 Y: =15
@@ -622,9 +669,11 @@ Home As screen:
 
             Label1_2 As label:
                 Align: =Align.Center
+                FocusedBorderThickness: =1
                 Height: =30
                 OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,false);Set(varSupportRequest,true)
                 Size: =14
+                TabIndex: =0
                 Text: ="App Support"
                 Width: =161
                 X: =237
@@ -652,11 +701,13 @@ Home As screen:
             ZIndex: =15
 
             "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                AccessibleLabel: ="Notification Gallery"
                 DelayItemLoading: =true
                 Height: =Gallery1.AllItemsCount*90
                 Items: ='Announcements List'
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
+                TabIndex: =0
                 TemplatePadding: =0
                 TemplateSize: =90
                 Width: =574
@@ -723,10 +774,12 @@ Home As screen:
                     ZIndex: =6
 
                 Icon1 As icon.OpenInNewWindow:
+                    AccessibleLabel: ="Open Link"
                     Color: =RGBA(255, 255, 255, 1)
                     Height: =38
                     Icon: =Icon.OpenInNewWindow
-                    OnSelect: =Launch(ThisItem.Link)
+                    OnSelect: ="Open Link"
+                    TabIndex: =0
                     Visible: =Not(IsBlank(Gallery1.Selected.Link))
                     Width: =42
                     X: =522
@@ -746,10 +799,12 @@ Home As screen:
             ZIndex: =20
 
         Icon2 As icon.Bell:
+            AccessibleLabel: ="Notification Bell"
             Color: =RGBA(255, 255, 0, 1)
             Height: =51
             Icon: =Icon.Bell
             OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+            TabIndex: =0
             Width: =52
             X: =554
             Y: =973
@@ -758,9 +813,11 @@ Home As screen:
         Label3 As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
             FontWeight: =FontWeight.Bold
             Height: =18
             OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+            TabIndex: =0
             Text: =CountRows('Announcements List')
             Width: =18
             X: =571
@@ -789,6 +846,7 @@ Home As screen:
             ZIndex: =1
 
         TextInput1 As text:
+            AccessibleLabel: ="Issue Details"
             Default: =""
             Height: =174
             HintText: ="Describe the issue you are facing with the application in as much detail as possible"
@@ -800,20 +858,24 @@ Home As screen:
             ZIndex: =2
 
         Icon4 As icon.CheckBadge:
+            AccessibleLabel: ="Issue Submit"
             Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(122, 138, 143, 1)
             DisplayMode: =If(IsBlank(TextInput1.Text),DisplayMode.Disabled,DisplayMode.Edit)
             Icon: =Icon.CheckBadge
             OnSelect: ='SimulationCentre-StudentHub-SupportRequest'.Run("mcnasam@uwl.ac.uk","Student Hub - Bug Report",TextInput1.Text);Set(varReportIssue,false);Reset(TextInput1);Notify("Reported Issue has been Submitted",NotificationType.Success,3000)
+            TabIndex: =0
             X: =287
             Y: =261
             ZIndex: =3
 
         Icon5 As icon.CancelBadge:
+            AccessibleLabel: ="Cancel Button"
             Color: =RGBA(255, 255, 255, 1)
             Height: =52
             Icon: =Icon.CancelBadge
             OnSelect: =Set(varReportIssue,false)
+            TabIndex: =0
             Visible: =varReportIssue
             Width: =56
             X: =6
@@ -842,6 +904,7 @@ Home As screen:
             ZIndex: =1
 
         TextInput1_1 As text:
+            AccessibleLabel: ="Support Details"
             Default: =""
             Height: =174
             HintText: ="Describe the question about the application you need support with"
@@ -853,20 +916,24 @@ Home As screen:
             ZIndex: =2
 
         Icon4_1 As icon.CheckBadge:
+            AccessibleLabel: ="Support Submit"
             Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(122, 138, 143, 1)
             DisplayMode: =If(IsBlank(TextInput1_1.Text),DisplayMode.Disabled,DisplayMode.Edit)
             Icon: =Icon.CheckBadge
             OnSelect: ='SimulationCentre-StudentHub-SupportRequest'.Run("mcnasam@uwl.ac.uk","Student Hub - Support Request",TextInput1_1.Text);Set(varSupportRequest,false);Reset(TextInput1_1);Notify("Reported Issue has been Submitted",NotificationType.Success,3000)
+            TabIndex: =0
             X: =287
             Y: =261
             ZIndex: =3
 
         Icon5_1 As icon.CancelBadge:
+            AccessibleLabel: ="Cancel"
             Color: =RGBA(255, 255, 255, 1)
             Height: =52
             Icon: =Icon.CancelBadge
             OnSelect: =Set(varSupportRequest,false)
+            TabIndex: =0
             Visible: =varSupportRequest
             Width: =56
             X: =6
@@ -895,6 +962,7 @@ Home As screen:
             ZIndex: =1
 
         TextInput1_2 As text:
+            AccessibleLabel: ="Suggestion Details"
             Default: =""
             Height: =174
             HintText: ="Describe the suggestion you have for the application in as much detail."
@@ -906,20 +974,24 @@ Home As screen:
             ZIndex: =2
 
         Icon4_2 As icon.CheckBadge:
+            AccessibleLabel: ="Suggestion Submit"
             Color: =RGBA(255, 255, 255, 1)
             DisabledColor: =RGBA(122, 138, 143, 1)
             DisplayMode: =If(IsBlank(TextInput1_2.Text),DisplayMode.Disabled,DisplayMode.Edit)
             Icon: =Icon.CheckBadge
             OnSelect: ='SimulationCentre-StudentHub-SupportRequest'.Run("mcnasam@uwl.ac.uk","Student Hub - Suggestion",TextInput1_2.Text);Set(varMakeSuggestion,false);Reset(TextInput1_2);Notify("Your suggestion has been Submitted",NotificationType.Success,3000)
+            TabIndex: =0
             X: =287
             Y: =261
             ZIndex: =3
 
         Icon5_2 As icon.CancelBadge:
+            AccessibleLabel: ="Support Cancel"
             Color: =RGBA(255, 255, 255, 1)
             Height: =52
             Icon: =Icon.CancelBadge
             OnSelect: =Set(varMakeSuggestion,false)
+            TabIndex: =0
             Visible: =varMakeSuggestion
             Width: =56
             X: =6

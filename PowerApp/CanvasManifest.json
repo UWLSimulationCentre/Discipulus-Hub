@@ -2,8 +2,8 @@
   "FormatVersion": "0.24",
   "Header": {
     "AnalysisOptions": {
-      "DataflowAnalysisEnabled": false,
-      "DataflowAnalysisFlagStateToggledByUser": false
+      "DataflowAnalysisEnabled": true,
+      "DataflowAnalysisFlagStateToggledByUser": true
     },
     "DocVersion": "1.336",
     "MinVersionToLoad": "1.331",
@@ -11,7 +11,7 @@
   },
   "Properties": {
     "AppCreationSource": "AppFromScratch",
-    "AppDescription": "BETA APPLICATION",
+    "AppDescription": "Mobile application, providing a launchpad to access support and clinical algorithms for students attending the Simulation Centre.",
     "AppPreviewFlagsMap": {
       "aibuilderserviceenrollment": false,
       "allowmultiplescreensincanvaspages": false,
@@ -24,7 +24,7 @@
       "classiccontrols": false,
       "consistentreturnschemafortabularfunctions": true,
       "copyandmerge": true,
-      "dataflowanalysisenabled": false,
+      "dataflowanalysisenabled": true,
       "datatablev2control": true,
       "dataverseactionsenabled": true,
       "delaycontrolrendering": true,
@@ -60,7 +60,7 @@
       "fluentv9controlspreview": true,
       "formuladataprefetch": true,
       "formularepair": false,
-      "generatedebugpublishedapp": false,
+      "generatedebugpublishedapp": true,
       "herocontrols": false,
       "improvedmediacapture": true,
       "improvedtabstopbehavior": false,
@@ -115,13 +115,13 @@
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
     "ManualOfflineProfileId": "",
-    "Name": "Simulation Centre - Student Hub - BETA",
+    "Name": "Simulation Centre - Student Hub",
     "OriginatingVersion": "1.334",
     "ParserErrorCount": 0,
     "ShowStatusBar": true
   },
   "PublishInfo": {
-    "AppName": "Simulation Centre - Student Hub - BETA",
+    "AppName": "Simulation Centre - Student Hub",
     "BackgroundColor": "rgba(255, 255, 255, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",

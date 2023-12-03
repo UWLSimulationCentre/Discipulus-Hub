@@ -703,7 +703,7 @@ Home As screen:
             Height: =18
             OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
             Size: =10
-            Text: =Gallery1.AllItemsCount
+            Text: =CountRows('Announcements List')
             Width: =18
             X: =571
             Y: =989

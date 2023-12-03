@@ -214,6 +214,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Home.Label3.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.Label3.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 31,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "CountRows('Announcements List')"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Home",
+                "type": "Home.Label3"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Home.TopBar_UniformBack.AccessibleLabel"
                 }
               ],

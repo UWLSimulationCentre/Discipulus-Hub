@@ -576,7 +576,7 @@ Home As screen:
         Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-((CountRows('Announcements List')-1)*90))
         ZIndex: =17
 
-        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
             Height: =Gallery1.AllItemsCount*90
             Items: ='Announcements List'
@@ -587,7 +587,20 @@ Home As screen:
             Width: =574
             ZIndex: =1
 
-            Title7 As label:
+            Image1 As image:
+                Height: =72
+                Image: =ThisItem.Icon
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =72
+                X: =16
+                Y: =7
+                ZIndex: =1
+
+            Title1 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                 Height: =Self.Size * 1.8
@@ -598,12 +611,12 @@ Home As screen:
                 PaddingTop: =0
                 Text: =ThisItem.Title
                 VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 86
-                X: =12
-                Y: =9
-                ZIndex: =1
+                Width: =Parent.TemplateWidth - 173
+                X: =94
+                Y: =13
+                ZIndex: =2
 
-            Subtitle6 As label:
+            Subtitle1 As label:
                 Color: =RGBA(255, 255, 255, 1)
                 FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                 Height: =Self.Size * 1.8
@@ -614,36 +627,36 @@ Home As screen:
                 PaddingTop: =0
                 Text: =ThisItem.Details
                 VerticalAlign: =VerticalAlign.Top
-                Width: =Title7.Width
-                X: =12
-                Y: =34
-                ZIndex: =2
+                Width: =Title1.Width
+                X: =Title1.X
+                Y: =Title1.Y + Title1.Height
+                ZIndex: =3
 
-            Separator7 As rectangle:
+            Separator1 As rectangle:
                 Height: =8
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
-                ZIndex: =4
+                ZIndex: =5
 
-            Rectangle7 As rectangle:
+            Rectangle1 As rectangle:
                 Fill: =RGBA(255, 255, 0, 1)
-                Height: =Parent.TemplateHeight - Separator7.Height
+                Height: =Parent.TemplateHeight - Separator1.Height
                 OnSelect: =Select(Parent)
                 Visible: =ThisItem.IsSelected
                 Width: =4
-                ZIndex: =5
+                ZIndex: =6
 
             Icon1 As icon.OpenInNewWindow:
                 Color: =RGBA(255, 255, 255, 1)
-                Height: =26
+                Height: =38
                 Icon: =Icon.OpenInNewWindow
-                OnSelect: =Launch(ThisItem.Link)
-                Visible: =If(IsBlank(ThisItem.Link),false,true)
-                Width: =31
-                X: =532
+                OnSelect: =Gallery1.Selected.Link
+                Visible: =Not(IsBlank(Gallery1.Selected.Link))
+                Width: =42
+                X: =522
                 Y: =9
-                ZIndex: =6
+                ZIndex: =7
 
     Button1 As button:
         Fill: =RGBA(246, 70, 104, 1)

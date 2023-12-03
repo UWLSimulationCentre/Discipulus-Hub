@@ -1,160 +1,274 @@
 Home As screen:
     Fill: =RGBA(65, 67, 106, 1)
 
-    CentreSignIn As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(122, 138, 143, 1)
+    Main_UniformView As groupContainer.manualLayoutContainer:
+        Height: =225
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        "Uniform1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =56
+            Items: ='Student Hub - Document List'
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =Set(varUniformView,true)
+            TemplatePadding: =0
+            TemplateSize: =90
+            Visible: =false
+            Width: =500
+            Y: =40
+            ZIndex: =1
+
+            Title2 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Title
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2.Size * 1.8)) / 2
+                ZIndex: =1
+
+            Subtitle2 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.'Has attachments'
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title2.Width
+                X: =Title2.X
+                Y: =Title2.Y + Title2.Height
+                ZIndex: =2
+
+            NextArrow2 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
+            Separator2 As rectangle:
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =4
+
+            Rectangle2 As rectangle:
+                Height: =Parent.TemplateHeight - Separator2.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =5
+
+        "Uniform2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =225
+            Items: =Uniform1.Selected.Attachments
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =80
+            Visible: =false
+            Width: =500
+            ZIndex: =2
+
+            Title4 As label:
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            NextArrow4 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                Color: =RGBA(166, 166, 166, 1)
+                Height: =50
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =12
+                PaddingLeft: =12
+                PaddingRight: =12
+                PaddingTop: =12
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =2
+
+            Separator4 As rectangle:
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =3
+
+            Rectangle4 As rectangle:
+                Height: =Parent.TemplateHeight - Separator4.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =4
+
+    Main_FeedbackButton As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
         X: =32
-        Y: =546
-        ZIndex: =1
+        Y: =533
+        ZIndex: =2
 
-        CentreSignIn_Label As label:
+        FeedbackText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Height: =70
+            OnSelect: |-
+                =Launch("https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL/SitePages/Simulation-Centre-Improvements.aspx")
             Size: =21
-            Text: ="Centre Sign-In System (COMING SOON)"
+            Text: ="Centre Feedback & Evaluation"
             Width: =575
             ZIndex: =1
 
-    "Uniform1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
-        DelayItemLoading: =true
-        Height: =56
-        Items: ='Student Hub - Document List'
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        OnSelect: =Set(varUniformView,true)
-        TemplatePadding: =0
-        TemplateSize: =90
-        Visible: =false
-        Y: =1079
-        ZIndex: =2
-
-        Title2 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.Title
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
-            X: =16
-            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2.Size * 1.8)) / 2
-            ZIndex: =1
-
-        Subtitle2 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.'Has attachments'
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Title2.Width
-            X: =Title2.X
-            Y: =Title2.Y + Title2.Height
-            ZIndex: =2
-
-        NextArrow2 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Color: =RGBA(166, 166, 166, 1)
-            Height: =50
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =16
-            PaddingLeft: =16
-            PaddingRight: =16
-            PaddingTop: =16
-            Tooltip: ="View item details"
-            Width: =50
-            X: =Parent.TemplateWidth - Self.Width - 12
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =3
-
-        Separator2 As rectangle:
-            Height: =8
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
-            ZIndex: =4
-
-        Rectangle2 As rectangle:
-            Height: =Parent.TemplateHeight - Separator2.Height
-            OnSelect: =Select(Parent)
-            Visible: =ThisItem.IsSelected
-            Width: =4
-            ZIndex: =5
-
-    "Uniform2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
-        DelayItemLoading: =true
-        Height: =483
-        Items: =Uniform1.Selected.Attachments
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =80
-        Visible: =false
-        Y: =653
+    Main_SafeMedicateButton As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =70
+        Width: =575
+        X: =32
+        Y: =450
         ZIndex: =3
 
-        Title4 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.DisplayName
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 86
-            X: =16
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+        safemedtext As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            OnSelect: |-
+                =Launch("https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL/SitePages/Mandatory-Training.aspx#safemedicate")
+            Size: =21
+            Text: ="SafeMedicate Support"
+            Width: =575
             ZIndex: =1
 
-        NextArrow4 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Color: =RGBA(166, 166, 166, 1)
-            Height: =50
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =12
-            PaddingLeft: =12
-            PaddingRight: =12
-            PaddingTop: =12
-            Tooltip: ="View item details"
-            Width: =50
-            X: =Parent.TemplateWidth - Self.Width - 12
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+    Main_InteractiveButton As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =70
+        Width: =575
+        X: =31
+        Y: =367
+        ZIndex: =4
+
+        safemedtext_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            OnSelect: =Set(varTourView,true)
+            Size: =21
+            Text: ="Interactive Tours"
+            Width: =575
+            ZIndex: =1
+
+    Main_InteractiveButtonPop As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =70
+        Visible: =varTourView
+        Width: =575
+        X: =32
+        Y: =367
+        ZIndex: =5
+
+        safemedtext_2 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(246, 70, 104, 1)
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(152, 64, 99, 1)
+            Height: =70
+            OnSelect: |-
+                =Launch("https://app.lapentor.com/sphere/uwl-simulation-centre-london")
+            Size: =21
+            Text: ="London Campus"
+            Width: =287.5
+            ZIndex: =1
+
+        safemedtext_3 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(246, 70, 104, 1)
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(152, 64, 99, 1)
+            Height: =70
+            OnSelect: |-
+                =Launch("https://app.lapentor.com/sphere/uwl-simulation-centre-reading")
+            Size: =21
+            Text: ="Reading Campus"
+            Width: =287.5
+            X: =287
             ZIndex: =2
 
-        Separator4 As rectangle:
-            Height: =8
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
-            ZIndex: =3
+    Icon3 As icon.CancelBadge:
+        Color: =RGBA(246, 70, 104, 1)
+        Height: =38
+        Icon: =Icon.CancelBadge
+        OnSelect: =Set(varTourView,false)
+        Visible: =varTourView
+        Width: =40
+        X: =16
+        Y: =354
+        ZIndex: =6
 
-        Rectangle4 As rectangle:
-            Height: =Parent.TemplateHeight - Separator4.Height
-            OnSelect: =Select(Parent)
-            Visible: =ThisItem.IsSelected
-            Width: =4
-            ZIndex: =4
+    Main_SupportButton As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =70
+        Width: =575
+        X: =31
+        Y: =284
+        ZIndex: =7
+
+        SupportText As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            OnSelect: |-
+                =Launch("https://uwloffice365live.sharepoint.com/sites/NursingStudentSite")
+            Size: =21
+            Text: ="Student Support"
+            Width: =575
+            ZIndex: =1
 
     Main_UniformButton As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
-        X: =31
-        Y: =205
-        ZIndex: =4
+        X: =32
+        Y: =201
+        ZIndex: =8
 
         UniformText As label:
             Align: =Align.Center
@@ -172,7 +286,7 @@ Home As screen:
         Width: =575
         X: =31
         Y: =119
-        ZIndex: =5
+        ZIndex: =9
 
         AlgText As label:
             Align: =Align.Center
@@ -184,11 +298,28 @@ Home As screen:
             Width: =575
             ZIndex: =1
 
+    CentreSignIn As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(122, 138, 143, 1)
+        Height: =70
+        Width: =575
+        X: =32
+        Y: =616
+        ZIndex: =10
+
+        CentreSignIn_Label As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Size: =21
+            Text: ="Centre Sign-In System (COMING SOON)"
+            Width: =575
+            ZIndex: =1
+
     TopBar As groupContainer.manualLayoutContainer:
         Fill: =RGBA(152, 64, 99, 1)
         Height: =103
         Width: =640
-        ZIndex: =6
+        ZIndex: =11
 
         AlgorithmTitle As label:
             Align: =Align.Center
@@ -200,62 +331,32 @@ Home As screen:
             Width: =640
             ZIndex: =3
 
-    Main_SupportButton As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(246, 70, 104, 1)
-        Height: =70
-        Width: =575
-        X: =31
-        Y: =291
-        ZIndex: =7
+    TopBar_UniformBack As icon.CancelBadge:
+        Color: =RGBA(246, 70, 104, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Set(varUniformView,false)
+        Visible: =varUniformView
+        X: =16
+        Y: =19
+        ZIndex: =12
 
-        SupportText As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =70
-            OnSelect: |-
-                =Launch("https://uwloffice365live.sharepoint.com/sites/NursingStudentSite")
-            Size: =21
-            Text: ="Student Support"
-            Width: =575
-            ZIndex: =1
+    TopBar_AlgorithmBack As icon.CancelBadge:
+        Color: =RGBA(246, 70, 104, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Set(varAlgorithmView,false);Set(varUniformView,false)
+        Visible: =varAlgorithmView
+        X: =16
+        Y: =19
+        ZIndex: =13
 
-    Main_FeedbackButton As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(246, 70, 104, 1)
-        Height: =70
-        Width: =575
-        X: =31
-        Y: =377
-        ZIndex: =8
-
-        FeedbackText As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =70
-            OnSelect: |-
-                =Launch("https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL/SitePages/Simulation-Centre-Improvements.aspx")
-            Size: =21
-            Text: ="Centre Feedback & Evaluation"
-            Width: =575
-            ZIndex: =1
-
-    Main_SafeMedicateButton As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(246, 70, 104, 1)
-        Height: =70
-        Width: =575
-        X: =31
-        Y: =463
-        ZIndex: =9
-
-        safemedtext As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =70
-            OnSelect: |-
-                =Launch("https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL/SitePages/Mandatory-Training.aspx#safemedicate")
-            Size: =21
-            Text: ="SafeMedicate Support"
-            Width: =575
-            ZIndex: =1
+    TopBar_PDFBack As icon.CancelBadge:
+        Color: =RGBA(246, 70, 104, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Set(varAlgorithmViewPDF,false)
+        Visible: =varAlgorithmViewPDF
+        X: =16
+        Y: =19
+        ZIndex: =14
 
     Main_AlgorithmView As groupContainer.manualLayoutContainer:
         Fill: =RGBA(12, 59, 94, 0.95)
@@ -263,7 +364,7 @@ Home As screen:
         Visible: =varAlgorithmView
         Width: =640
         Y: =103
-        ZIndex: =10
+        ZIndex: =16
 
         "Algorithm1 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -424,24 +525,6 @@ Home As screen:
                 Width: =4
                 ZIndex: =4
 
-    UniformPDF As pdfViewer:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Document: =Uniform2.Selected.Value
-        Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =927
-        Visible: =varUniformView
-        Y: =103
-        ZIndex: =11
-
-    TopBar_UniformBack As icon.CancelBadge:
-        Color: =RGBA(246, 70, 104, 1)
-        Icon: =Icon.BackArrow
-        OnSelect: =Set(varUniformView,false)
-        Visible: =varUniformView
-        X: =16
-        Y: =19
-        ZIndex: =12
-
     AlgorithmPDF As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
         Document: =Algorithm2.Selected.Value
@@ -449,32 +532,23 @@ Home As screen:
         Height: =1033
         Visible: =varAlgorithmViewPDF
         Y: =103
-        ZIndex: =13
+        ZIndex: =17
 
-    TopBar_AlgorithmBack As icon.CancelBadge:
-        Color: =RGBA(246, 70, 104, 1)
-        Icon: =Icon.BackArrow
-        OnSelect: =Set(varAlgorithmView,false);Set(varUniformView,false)
-        Visible: =varAlgorithmView
-        X: =16
-        Y: =19
-        ZIndex: =14
-
-    TopBar_PDFBack As icon.CancelBadge:
-        Color: =RGBA(246, 70, 104, 1)
-        Icon: =Icon.BackArrow
-        OnSelect: =Set(varAlgorithmViewPDF,false)
-        Visible: =varAlgorithmViewPDF
-        X: =16
-        Y: =19
-        ZIndex: =15
+    UniformPDF As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =Uniform2.Selected.Value
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =927
+        Visible: =varUniformView
+        Y: =103
+        ZIndex: =18
 
     BottomBar As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =106
         Width: =640
         Y: =1030
-        ZIndex: =16
+        ZIndex: =19
 
         ReportIssueButton As group:
             Height: =5
@@ -563,119 +637,119 @@ Home As screen:
                 Y: =67
                 ZIndex: =6
 
-    Container1 As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(246, 70, 104, 1)
-        Height: =If(CountRows('Announcements List') = 1, 90 , 90*CountRows('Announcements List'))
-        RadiusBottomLeft: =10
-        RadiusBottomRight: =10
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Visible: =varAnnouncementVisible
-        Width: =574
-        X: =32
-        Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-((CountRows('Announcements List')-1)*90))
-        ZIndex: =17
-
-        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-            DelayItemLoading: =true
-            Height: =Gallery1.AllItemsCount*90
-            Items: ='Announcements List'
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            TemplatePadding: =0
-            TemplateSize: =90
-            Width: =574
-            ZIndex: =1
-
-            Image1 As image:
-                Height: =72
-                Image: =ThisItem.Icon
-                OnSelect: =Select(Parent)
-                RadiusBottomLeft: =8
-                RadiusBottomRight: =8
-                RadiusTopLeft: =8
-                RadiusTopRight: =8
-                Width: =72
-                X: =16
-                Y: =7
-                ZIndex: =1
-
-            Title1 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Title
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Parent.TemplateWidth - 173
-                X: =94
-                Y: =13
-                ZIndex: =2
-
-            Subtitle1 As label:
-                Color: =RGBA(255, 255, 255, 1)
-                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                Height: =Self.Size * 1.8
-                OnSelect: =Select(Parent)
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =ThisItem.Details
-                VerticalAlign: =VerticalAlign.Top
-                Width: =Title1.Width
-                X: =Title1.X
-                Y: =Title1.Y + Title1.Height
-                ZIndex: =3
-
-            Separator1 As rectangle:
-                Height: =8
-                OnSelect: =Select(Parent)
-                Width: =Parent.TemplateWidth
-                Y: =Parent.TemplateHeight - Self.Height
-                ZIndex: =5
-
-            Rectangle1 As rectangle:
-                Fill: =RGBA(255, 255, 0, 1)
-                Height: =Parent.TemplateHeight - Separator1.Height
-                OnSelect: =Select(Parent)
-                Visible: =ThisItem.IsSelected
-                Width: =4
-                ZIndex: =6
-
-            Icon1 As icon.OpenInNewWindow:
-                Color: =RGBA(255, 255, 255, 1)
-                Height: =38
-                Icon: =Icon.OpenInNewWindow
-                OnSelect: =Launch(ThisItem.Link)
-                Visible: =Not(IsBlank(Gallery1.Selected.Link))
-                Width: =42
-                X: =522
-                Y: =9
-                ZIndex: =7
-
-    Button1 As button:
-        Fill: =RGBA(246, 70, 104, 1)
-        Height: =51
-        HoverFill: =RGBA(246, 70, 104, 1)
-        OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
-        Size: =24
-        Text: ="Announcements"
-        Width: =575
-        X: =31
-        Y: =973
-        ZIndex: =18
-
-    Group2 As group:
+    Announcements As group:
         Height: =5
         Width: =5
-        X: =-502
-        Y: =20
-        ZIndex: =26
+        X: =60
+        Y: =60
+        ZIndex: =22
+
+        Container1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(246, 70, 104, 1)
+            Height: =If(CountRows('Announcements List') = 1, 90 , 90*CountRows('Announcements List'))
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =varAnnouncementVisible
+            Width: =574
+            X: =32
+            Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-((CountRows('Announcements List')-1)*90))
+            ZIndex: =15
+
+            "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =Gallery1.AllItemsCount*90
+                Items: ='Announcements List'
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =90
+                Width: =574
+                ZIndex: =1
+
+                Image1 As image:
+                    Height: =72
+                    Image: =ThisItem.Icon
+                    OnSelect: =Select(Parent)
+                    RadiusBottomLeft: =8
+                    RadiusBottomRight: =8
+                    RadiusTopLeft: =8
+                    RadiusTopRight: =8
+                    Width: =72
+                    X: =16
+                    Y: =7
+                    ZIndex: =1
+
+                Title1 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Title
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 173
+                    X: =94
+                    Y: =13
+                    ZIndex: =2
+
+                Subtitle1 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Details
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Title1.Width
+                    X: =Title1.X
+                    Y: =Title1.Y + Title1.Height
+                    ZIndex: =3
+
+                Separator1 As rectangle:
+                    Height: =8
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle1 As rectangle:
+                    Fill: =RGBA(255, 255, 0, 1)
+                    Height: =Parent.TemplateHeight - Separator1.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+                Icon1 As icon.OpenInNewWindow:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Height: =38
+                    Icon: =Icon.OpenInNewWindow
+                    OnSelect: =Launch(ThisItem.Link)
+                    Visible: =Not(IsBlank(Gallery1.Selected.Link))
+                    Width: =42
+                    X: =522
+                    Y: =9
+                    ZIndex: =7
+
+        Button1 As button:
+            Fill: =RGBA(246, 70, 104, 1)
+            Height: =51
+            HoverFill: =RGBA(246, 70, 104, 1)
+            OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+            Size: =24
+            Text: ="Announcements"
+            Width: =575
+            X: =31
+            Y: =973
+            ZIndex: =20
 
         Icon2 As icon.Bell:
             Color: =RGBA(255, 255, 0, 1)
@@ -685,16 +759,7 @@ Home As screen:
             Width: =52
             X: =554
             Y: =973
-            ZIndex: =19
-
-        Circle1 As circle:
-            Fill: =RGBA(255, 191, 0, 1)
-            Height: =18
-            OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
-            Width: =18
-            X: =571
-            Y: =989
-            ZIndex: =20
+            ZIndex: =21
 
         Label3 As label:
             Align: =Align.Center
@@ -702,10 +767,9 @@ Home As screen:
             FontWeight: =FontWeight.Bold
             Height: =18
             OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
-            Size: =10
             Text: =CountRows('Announcements List')
             Width: =18
             X: =571
             Y: =989
-            ZIndex: =21
+            ZIndex: =23
 

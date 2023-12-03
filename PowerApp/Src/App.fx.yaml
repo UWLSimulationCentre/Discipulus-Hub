@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: =Set(varUniformView,false);Set(varAnnouncementVisible,true);Refresh('Announcements List');Refresh('Student Hub - Document List')
+    OnStart: =Set(varUniformView,false);Set(varAnnouncementVisible,true);Refresh('Announcements List');Refresh('Student Hub - Document List');Set(varNotifyHeight,CountRows('Announcements List'))
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

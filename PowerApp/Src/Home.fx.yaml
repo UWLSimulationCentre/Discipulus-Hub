@@ -565,7 +565,7 @@ Home As screen:
 
     Container1 As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
-        Height: =Gallery1.AllItemsCount*90
+        Height: =If(CountRows('Announcements List') = 1, 90 , 90*CountRows('Announcements List'))
         RadiusBottomLeft: =10
         RadiusBottomRight: =10
         RadiusTopLeft: =0
@@ -573,10 +573,7 @@ Home As screen:
         Visible: =varAnnouncementVisible
         Width: =574
         X: =32
-        Y: |-
-            =IfError(885-(Gallery1.AllItemsCount*90)/Gallery1.AllItemsCount,
-                885,885-(Gallery1.AllItemsCount*90)/Gallery1.AllItemsCount
-            )
+        Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-(CountRows('Announcements List')*90))
         ZIndex: =17
 
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":

@@ -3,11 +3,9 @@
   <grammars>
     <jsonTypes targetNamespace="https://uk-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_email_def" />
-      <string name="ManualTriggerInput_email_1_def" />
       <string name="ManualTriggerInput_text_def" />
       <object name="ManualTriggerInput">
         <property name="email" type="string" />
-        <property name="email_1" type="string" />
         <property name="text" type="string" />
       </object>
     </jsonTypes>
@@ -24,9 +22,6 @@
           <representation mediaType="application/json">
             <param style="plain" name="email" path="/email" type="xs:string" required="true">
               <doc title="RequesterEmail" />
-            </param>
-            <param style="plain" name="email_1" path="/email_1" type="xs:string" required="true">
-              <doc title="ApproverEmail" />
             </param>
             <param style="plain" name="text" path="/text" type="xs:string" required="true">
               <doc title="Approval Title" />

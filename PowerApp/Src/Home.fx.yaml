@@ -808,7 +808,7 @@ Home As screen:
             DisabledColor: =RGBA(122, 138, 143, 1)
             DisplayMode: =If(IsBlank(TextInput1.Text),DisplayMode.Disabled,DisplayMode.Edit)
             Icon: =Icon.CheckBadge
-            OnSelect: ='SimulationCentre-StudentHub-ReportIssue'.Run(User().Email,"mcnasam@uwl.ac.uk",TextInput1.Text);Set(varReportIssue,false)
+            OnSelect: ='SimulationCentre-StudentHub-ReportIssue'.Run(User().Email,TextInput1.Text);Set(varReportIssue,false);Reset(TextInput1);Notify("Reported Issue has been Submitted",NotificationType.Success,3000)
             X: =287
             Y: =261
             ZIndex: =3

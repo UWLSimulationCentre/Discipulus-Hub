@@ -1,6 +1,23 @@
 Home As screen:
     Fill: =RGBA(65, 67, 106, 1)
 
+    CentreSignIn As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(122, 138, 143, 1)
+        Height: =70
+        Width: =575
+        X: =32
+        Y: =546
+        ZIndex: =1
+
+        CentreSignIn_Label As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Size: =21
+            Text: ="Centre Sign-In System (COMING SOON)"
+            Width: =575
+            ZIndex: =1
+
     "Uniform1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =56
@@ -12,7 +29,7 @@ Home As screen:
         TemplateSize: =90
         Visible: =false
         Y: =1079
-        ZIndex: =1
+        ZIndex: =2
 
         Title2 As label:
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -84,7 +101,7 @@ Home As screen:
         TemplateSize: =80
         Visible: =false
         Y: =653
-        ZIndex: =2
+        ZIndex: =3
 
         Title4 As label:
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
@@ -136,14 +153,14 @@ Home As screen:
         Height: =70
         Width: =575
         X: =31
-        Y: =217
-        ZIndex: =3
+        Y: =205
+        ZIndex: =4
 
         UniformText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Height: =70
-            OnSelect: =Set(varUniformView,true)
+            OnSelect: =Set(varUniformView,true);Set(varAnnouncementVisible,false)
             Size: =21
             Text: ="Uniform Policy"
             Width: =575
@@ -154,14 +171,14 @@ Home As screen:
         Height: =70
         Width: =575
         X: =31
-        Y: =132
-        ZIndex: =4
+        Y: =119
+        ZIndex: =5
 
         AlgText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Height: =70
-            OnSelect: =Set(varAlgorithmView,true)
+            OnSelect: =Set(varAlgorithmView,true);Set(varAnnouncementVisible,false)
             Size: =21
             Text: ="Algorithms & Guidelines"
             Width: =575
@@ -171,7 +188,7 @@ Home As screen:
         Fill: =RGBA(152, 64, 99, 1)
         Height: =103
         Width: =640
-        ZIndex: =5
+        ZIndex: =6
 
         AlgorithmTitle As label:
             Align: =Align.Center
@@ -188,8 +205,8 @@ Home As screen:
         Height: =70
         Width: =575
         X: =31
-        Y: =307
-        ZIndex: =6
+        Y: =291
+        ZIndex: =7
 
         SupportText As label:
             Align: =Align.Center
@@ -207,8 +224,8 @@ Home As screen:
         Height: =70
         Width: =575
         X: =31
-        Y: =392
-        ZIndex: =7
+        Y: =377
+        ZIndex: =8
 
         FeedbackText As label:
             Align: =Align.Center
@@ -226,8 +243,8 @@ Home As screen:
         Height: =70
         Width: =575
         X: =31
-        Y: =480
-        ZIndex: =8
+        Y: =463
+        ZIndex: =9
 
         safemedtext As label:
             Align: =Align.Center
@@ -246,7 +263,7 @@ Home As screen:
         Visible: =varAlgorithmView
         Width: =640
         Y: =103
-        ZIndex: =9
+        ZIndex: =10
 
         "Algorithm1 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -411,10 +428,10 @@ Home As screen:
         BorderColor: =RGBA(0, 0, 0, 1)
         Document: =Uniform2.Selected.Value
         Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =1033
+        Height: =927
         Visible: =varUniformView
         Y: =103
-        ZIndex: =10
+        ZIndex: =11
 
     TopBar_UniformBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
@@ -423,7 +440,7 @@ Home As screen:
         Visible: =varUniformView
         X: =16
         Y: =19
-        ZIndex: =11
+        ZIndex: =12
 
     AlgorithmPDF As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
@@ -432,7 +449,7 @@ Home As screen:
         Height: =1033
         Visible: =varAlgorithmViewPDF
         Y: =103
-        ZIndex: =12
+        ZIndex: =13
 
     TopBar_AlgorithmBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
@@ -441,7 +458,7 @@ Home As screen:
         Visible: =varAlgorithmView
         X: =16
         Y: =19
-        ZIndex: =13
+        ZIndex: =14
 
     TopBar_PDFBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
@@ -450,24 +467,7 @@ Home As screen:
         Visible: =varAlgorithmViewPDF
         X: =16
         Y: =19
-        ZIndex: =14
-
-    CentreSignIn As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(122, 138, 143, 1)
-        Height: =70
-        Width: =575
-        X: =32
-        Y: =566
         ZIndex: =15
-
-        CentreSignIn_Label As label:
-            Align: =Align.Center
-            Color: =RGBA(255, 255, 255, 1)
-            Height: =70
-            Size: =21
-            Text: ="Centre Sign-In System (COMING SOON)"
-            Width: =575
-            ZIndex: =1
 
     BottomBar As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
@@ -651,7 +651,7 @@ Home As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =38
                 Icon: =Icon.OpenInNewWindow
-                OnSelect: =Gallery1.Selected.Link
+                OnSelect: =Launch(Gallery1.Selected.Link)
                 Visible: =Not(IsBlank(Gallery1.Selected.Link))
                 Width: =42
                 X: =522

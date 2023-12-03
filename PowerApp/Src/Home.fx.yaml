@@ -573,7 +573,10 @@ Home As screen:
         Visible: =varAnnouncementVisible
         Width: =574
         X: =32
-        Y: =885-(Gallery1.AllItemsCount*90)/Gallery1.AllItemsCount
+        Y: |-
+            =IfError(885-(Gallery1.AllItemsCount*90)/Gallery1.AllItemsCount,
+                885,885-(Gallery1.AllItemsCount*90)/Gallery1.AllItemsCount
+            )
         ZIndex: =17
 
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":

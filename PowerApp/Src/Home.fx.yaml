@@ -651,7 +651,7 @@ Home As screen:
                 Color: =RGBA(255, 255, 255, 1)
                 Height: =38
                 Icon: =Icon.OpenInNewWindow
-                OnSelect: =Launch(Gallery1.Selected.Link)
+                OnSelect: =Launch(ThisItem.Link)
                 Visible: =Not(IsBlank(Gallery1.Selected.Link))
                 Width: =42
                 X: =522

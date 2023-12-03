@@ -1,12 +1,14 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://uk-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="SimulationCentre-StudentHub-ReportIssue" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="Simulation Centre - Student Hub - Report Issue" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://uk-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="SimulationCentre-StudentHub-SupportRequest" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Simulation Centre - Student Hub - Support Request" />
   <grammars>
     <jsonTypes targetNamespace="https://uk-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_email_def" />
       <string name="ManualTriggerInput_text_def" />
+      <string name="ManualTriggerInput_text_1_def" />
       <object name="ManualTriggerInput">
         <property name="email" type="string" />
         <property name="text" type="string" />
+        <property name="text_1" type="string" />
       </object>
     </jsonTypes>
   </grammars>
@@ -21,10 +23,13 @@
           </param>
           <representation mediaType="application/json">
             <param style="plain" name="email" path="/email" type="xs:string" required="true">
-              <doc title="RequesterEmail" />
+              <doc title="email" />
             </param>
             <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="Approval Title" />
+              <doc title="Message Title" />
+            </param>
+            <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
+              <doc title="Message Body" />
             </param>
           </representation>
         </request>

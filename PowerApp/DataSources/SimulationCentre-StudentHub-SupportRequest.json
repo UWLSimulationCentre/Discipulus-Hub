@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "6ee3f3c2-cff0-0d16-9061-4dae312b6dc9",
+    "Name": "SimulationCentre-StudentHub-SupportRequest",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "25da79c9-0292-ee11-be37-002248c871a6"
+  }
+]

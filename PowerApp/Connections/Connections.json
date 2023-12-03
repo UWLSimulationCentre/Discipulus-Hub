@@ -33,6 +33,58 @@
     ],
     "id": "1500461b-b2d8-4aac-aa75-0b802ca0d5c4"
   },
+  "21f102fb-67e5-4d25-930e-16b14afa2455": {
+    "connectionRef": {
+      "displayName": "Microsoft Teams",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1657/1.0.1657.3443/teams/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_teams"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "2856c4af-18a1-46da-af7a-8ca661035a40"
+    ],
+    "id": "21f102fb-67e5-4d25-930e-16b14afa2455"
+  },
+  "2856c4af-18a1-46da-af7a-8ca661035a40": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "21f102fb-67e5-4d25-930e-16b14afa2455": {
+          "value": "shared_teams"
+        },
+        "workflowEntityId": {
+          "value": "25da79c9-0292-ee11-be37-002248c871a6"
+        },
+        "workflowName": {
+          "value": "6ee3f3c2-cff0-0d16-9061-4dae312b6dc9"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_teams": {
+          "value": "21f102fb-67e5-4d25-930e-16b14afa2455"
+        },
+        "workflowEntityId": {
+          "value": "25da79c9-0292-ee11-be37-002248c871a6"
+        },
+        "workflowName": {
+          "value": "6ee3f3c2-cff0-0d16-9061-4dae312b6dc9"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SimulationCentre-StudentHub-SupportRequest"
+    ],
+    "dependencies": {
+      "shared_teams": "21f102fb-67e5-4d25-930e-16b14afa2455"
+    },
+    "dependents": [],
+    "id": "2856c4af-18a1-46da-af7a-8ca661035a40"
+  },
   "4ede76b4-ccb6-4e87-b079-8b28b9f86ee5": {
     "appActions": [
       "MyProfile"
@@ -52,67 +104,6 @@
     "dependencies": {},
     "dependents": [],
     "id": "4ede76b4-ccb6-4e87-b079-8b28b9f86ee5"
-  },
-  "7b3f5582-f1f8-4f1e-bb6b-012789c9117d": {
-    "connectionRef": {
-      "displayName": "Approvals",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1650/1.0.1650.3374/approvals/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_approvals"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "c125a68c-79d3-4642-a6bb-532316e97477"
-    ],
-    "id": "7b3f5582-f1f8-4f1e-bb6b-012789c9117d"
-  },
-  "b29139ad-3fed-42cb-93c6-1d8f07cd44ac": {
-    "connectionRef": {
-      "displayName": "Microsoft Teams",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1657/1.0.1657.3443/teams/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_teams"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "c125a68c-79d3-4642-a6bb-532316e97477"
-    ],
-    "id": "b29139ad-3fed-42cb-93c6-1d8f07cd44ac"
-  },
-  "c125a68c-79d3-4642-a6bb-532316e97477": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "workflowEntityId": {
-          "value": "6df6fbaf-ff91-ee11-be37-002248c87076"
-        },
-        "workflowName": {
-          "value": "32458ff6-5d52-9fc8-b306-a1865f9251fd"
-        }
-      },
-      "parameterHintsV2": {
-        "workflowEntityId": {
-          "value": "6df6fbaf-ff91-ee11-be37-002248c87076"
-        },
-        "workflowName": {
-          "value": "32458ff6-5d52-9fc8-b306-a1865f9251fd"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "SimulationCentre-StudentHub-ReportIssue"
-    ],
-    "dependencies": {
-      "shared_approvals_1": "7b3f5582-f1f8-4f1e-bb6b-012789c9117d",
-      "shared_teams_1": "b29139ad-3fed-42cb-93c6-1d8f07cd44ac"
-    },
-    "dependents": [],
-    "id": "c125a68c-79d3-4642-a6bb-532316e97477"
   },
   "e3db6dac-5264-404d-afff-169c40e6385d": {
     "appActions": [

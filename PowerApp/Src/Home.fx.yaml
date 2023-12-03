@@ -560,7 +560,7 @@ Home As screen:
             BottomBar_ReportBug As icon.Bug:
                 Height: =52
                 Icon: =Icon.Bug
-                OnSelect: =Set(varReportIssue,true)
+                OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,true);Set(varSupportRequest,false)
                 Width: =49
                 X: =53
                 Y: =15
@@ -569,7 +569,7 @@ Home As screen:
             Label1 As label:
                 Align: =Align.Center
                 Height: =30
-                OnSelect: =Set(varReportIssue,true)
+                OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,true);Set(varSupportRequest,false)
                 Size: =14
                 Text: ="Report an Issue"
                 Width: =147
@@ -587,8 +587,7 @@ Home As screen:
             BottomBar_ReportBug_1 As icon.Bug:
                 Height: =52
                 Icon: =Icon.Mail
-                OnSelect: |-
-                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Feature%20Suggestion&body=Below%20are%20the%20details%20of%20a%20suggestion%20I%20have%20for%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                OnSelect: =Set(varMakeSuggestion,true);Set(varReportIssue,false);Set(varSupportRequest,false)
                 Width: =49
                 X: =533
                 Y: =15
@@ -597,8 +596,7 @@ Home As screen:
             Label1_1 As label:
                 Align: =Align.Center
                 Height: =30
-                OnSelect: |-
-                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Feature%20Suggestion&body=Below%20are%20the%20details%20of%20a%20suggestion%20I%20have%20for%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                OnSelect: =Set(varMakeSuggestion,true);Set(varReportIssue,false);Set(varSupportRequest,false)
                 Size: =14
                 Text: ="Make Suggestion"
                 Width: =161
@@ -616,8 +614,7 @@ Home As screen:
             BottomBar_ReportBug_2 As icon.Bug:
                 Height: =52
                 Icon: =Icon.Support
-                OnSelect: |-
-                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Support%20Request&body=I%20would%20like%20some%20help%20with%20the%20Student%20Hub%20App%2C%20below%20are%20details%20of%20my%20support%20request%3A%0D%0A%0D%0A%0D%0A%0D%0A")
+                OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,false);Set(varSupportRequest,true)
                 Width: =49
                 X: =293
                 Y: =15
@@ -626,8 +623,7 @@ Home As screen:
             Label1_2 As label:
                 Align: =Align.Center
                 Height: =30
-                OnSelect: |-
-                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Support%20Request&body=I%20would%20like%20some%20help%20with%20the%20Student%20Hub%20App%2C%20below%20are%20details%20of%20my%20support%20request%3A%0D%0A%0D%0A%0D%0A%0D%0A")
+                OnSelect: =Set(varMakeSuggestion,false);Set(varReportIssue,false);Set(varSupportRequest,true)
                 Size: =14
                 Text: ="App Support"
                 Width: =161
@@ -771,7 +767,7 @@ Home As screen:
             Y: =989
             ZIndex: =22
 
-    Container4 As groupContainer.manualLayoutContainer:
+    IssueReport As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =330
         RadiusBottomLeft: =0
@@ -808,19 +804,125 @@ Home As screen:
             DisabledColor: =RGBA(122, 138, 143, 1)
             DisplayMode: =If(IsBlank(TextInput1.Text),DisplayMode.Disabled,DisplayMode.Edit)
             Icon: =Icon.CheckBadge
-            OnSelect: ='SimulationCentre-StudentHub-ReportIssue'.Run(User().Email,TextInput1.Text);Set(varReportIssue,false);Reset(TextInput1);Notify("Reported Issue has been Submitted",NotificationType.Success,3000)
+            OnSelect: ='SimulationCentre-StudentHub-SupportRequest'.Run("mcnasam@uwl.ac.uk","Student Hub - Bug Report",TextInput1.Text);Set(varReportIssue,false);Reset(TextInput1);Notify("Reported Issue has been Submitted",NotificationType.Success,3000)
             X: =287
             Y: =261
             ZIndex: =3
 
-    Icon5 As icon.CancelBadge:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =52
-        Icon: =Icon.CancelBadge
-        OnSelect: =Set(varReportIssue,false)
-        Visible: =varReportIssue
-        Width: =56
-        X: =6
-        Y: =707
+        Icon5 As icon.CancelBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =52
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(varReportIssue,false)
+            Visible: =varReportIssue
+            Width: =56
+            X: =6
+            Y: =6
+            ZIndex: =4
+
+    SupportRequest As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =330
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =varSupportRequest
+        Width: =640
+        Y: =700
         ZIndex: =24
+
+        Label2_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =56
+            Size: =21
+            Text: ="Enter Support Request Details Below"
+            Width: =640
+            ZIndex: =1
+
+        TextInput1_1 As text:
+            Default: =""
+            Height: =174
+            HintText: ="Describe the question about the application you need support with"
+            Mode: =TextMode.MultiLine
+            Size: =21
+            Width: =551
+            X: =44
+            Y: =68
+            ZIndex: =2
+
+        Icon4_1 As icon.CheckBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(122, 138, 143, 1)
+            DisplayMode: =If(IsBlank(TextInput1_1.Text),DisplayMode.Disabled,DisplayMode.Edit)
+            Icon: =Icon.CheckBadge
+            OnSelect: ='SimulationCentre-StudentHub-SupportRequest'.Run("mcnasam@uwl.ac.uk","Student Hub - Support Request",TextInput1_1.Text);Set(varSupportRequest,false);Reset(TextInput1_1);Notify("Reported Issue has been Submitted",NotificationType.Success,3000)
+            X: =287
+            Y: =261
+            ZIndex: =3
+
+        Icon5_1 As icon.CancelBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =52
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(varSupportRequest,false)
+            Visible: =varSupportRequest
+            Width: =56
+            X: =6
+            Y: =6
+            ZIndex: =4
+
+    SuggestionRequest As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =330
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =varMakeSuggestion
+        Width: =640
+        Y: =700
+        ZIndex: =25
+
+        Label2_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =56
+            Size: =21
+            Text: ="Enter Suggestion Details Below"
+            Width: =640
+            ZIndex: =1
+
+        TextInput1_2 As text:
+            Default: =""
+            Height: =174
+            HintText: ="Describe the suggestion you have for the application in as much detail."
+            Mode: =TextMode.MultiLine
+            Size: =21
+            Width: =551
+            X: =44
+            Y: =68
+            ZIndex: =2
+
+        Icon4_2 As icon.CheckBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(122, 138, 143, 1)
+            DisplayMode: =If(IsBlank(TextInput1_2.Text),DisplayMode.Disabled,DisplayMode.Edit)
+            Icon: =Icon.CheckBadge
+            OnSelect: ='SimulationCentre-StudentHub-SupportRequest'.Run("mcnasam@uwl.ac.uk","Student Hub - Suggestion",TextInput1_2.Text);Set(varMakeSuggestion,false);Reset(TextInput1_2);Notify("Your suggestion has been Submitted",NotificationType.Success,3000)
+            X: =287
+            Y: =261
+            ZIndex: =3
+
+        Icon5_2 As icon.CancelBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =52
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(varMakeSuggestion,false)
+            Visible: =varMakeSuggestion
+            Width: =56
+            X: =6
+            Y: =6
+            ZIndex: =4
 

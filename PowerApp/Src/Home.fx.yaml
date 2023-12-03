@@ -560,8 +560,7 @@ Home As screen:
             BottomBar_ReportBug As icon.Bug:
                 Height: =52
                 Icon: =Icon.Bug
-                OnSelect: |-
-                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Bug%20Report&body=Below%20are%20the%20details%20of%20a%20bug%2Ferror%20I%20have%20found%20in%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                OnSelect: =Set(varReportIssue,true)
                 Width: =49
                 X: =53
                 Y: =15
@@ -570,8 +569,7 @@ Home As screen:
             Label1 As label:
                 Align: =Align.Center
                 Height: =30
-                OnSelect: |-
-                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Bug%20Report&body=Below%20are%20the%20details%20of%20a%20bug%2Ferror%20I%20have%20found%20in%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                OnSelect: =Set(varReportIssue,true)
                 Size: =14
                 Text: ="Report an Issue"
                 Width: =147
@@ -771,5 +769,58 @@ Home As screen:
             Width: =18
             X: =571
             Y: =989
-            ZIndex: =23
+            ZIndex: =22
+
+    Container4 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =330
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =varReportIssue
+        Width: =640
+        Y: =700
+        ZIndex: =23
+
+        Label2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =56
+            Size: =21
+            Text: ="Enter Issue Details Below"
+            Width: =640
+            ZIndex: =1
+
+        TextInput1 As text:
+            Default: =""
+            Height: =174
+            HintText: ="Describe the issue you are facing with the application in as much detail as possible"
+            Mode: =TextMode.MultiLine
+            Size: =21
+            Width: =551
+            X: =44
+            Y: =68
+            ZIndex: =2
+
+        Icon4 As icon.CheckBadge:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(122, 138, 143, 1)
+            DisplayMode: =If(IsBlank(TextInput1.Text),DisplayMode.Disabled,DisplayMode.Edit)
+            Icon: =Icon.CheckBadge
+            OnSelect: ='SimulationCentre-StudentHub-ReportIssue'.Run(User().Email,"mcnasam@uwl.ac.uk",TextInput1.Text);Set(varReportIssue,false)
+            X: =287
+            Y: =261
+            ZIndex: =3
+
+    Icon5 As icon.CancelBadge:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =52
+        Icon: =Icon.CancelBadge
+        OnSelect: =Set(varReportIssue,false)
+        Visible: =varReportIssue
+        Width: =56
+        X: =6
+        Y: =707
+        ZIndex: =24
 

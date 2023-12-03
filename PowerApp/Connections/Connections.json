@@ -33,6 +33,34 @@
     ],
     "id": "1500461b-b2d8-4aac-aa75-0b802ca0d5c4"
   },
+  "2068140b-d0f0-4a6f-b4b5-b3d9e66208aa": {
+    "connectionRef": {
+      "displayName": "Microsoft Teams",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1657/1.0.1657.3443/teams/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_teams"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "93288224-7b90-4344-b182-9ceffac49df5"
+    ],
+    "id": "2068140b-d0f0-4a6f-b4b5-b3d9e66208aa"
+  },
+  "2e29edf9-0b68-437e-91ad-31dfca637b3d": {
+    "connectionRef": {
+      "displayName": "Approvals",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1650/1.0.1650.3374/approvals/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_approvals"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "93288224-7b90-4344-b182-9ceffac49df5"
+    ],
+    "id": "2e29edf9-0b68-437e-91ad-31dfca637b3d"
+  },
   "4ede76b4-ccb6-4e87-b079-8b28b9f86ee5": {
     "appActions": [
       "MyProfile"
@@ -52,6 +80,51 @@
     "dependencies": {},
     "dependents": [],
     "id": "4ede76b4-ccb6-4e87-b079-8b28b9f86ee5"
+  },
+  "93288224-7b90-4344-b182-9ceffac49df5": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "2068140b-d0f0-4a6f-b4b5-b3d9e66208aa": {
+          "value": "shared_teams_1"
+        },
+        "2e29edf9-0b68-437e-91ad-31dfca637b3d": {
+          "value": "shared_approvals_1"
+        },
+        "workflowEntityId": {
+          "value": "6df6fbaf-ff91-ee11-be37-002248c87076"
+        },
+        "workflowName": {
+          "value": "32458ff6-5d52-9fc8-b306-a1865f9251fd"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_approvals_1": {
+          "value": "2e29edf9-0b68-437e-91ad-31dfca637b3d"
+        },
+        "shared_teams_1": {
+          "value": "2068140b-d0f0-4a6f-b4b5-b3d9e66208aa"
+        },
+        "workflowEntityId": {
+          "value": "6df6fbaf-ff91-ee11-be37-002248c87076"
+        },
+        "workflowName": {
+          "value": "32458ff6-5d52-9fc8-b306-a1865f9251fd"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SimulationCentre-StudentHub-ReportIssue"
+    ],
+    "dependencies": {
+      "shared_approvals_1": "2e29edf9-0b68-437e-91ad-31dfca637b3d",
+      "shared_teams_1": "2068140b-d0f0-4a6f-b4b5-b3d9e66208aa"
+    },
+    "dependents": [],
+    "id": "93288224-7b90-4344-b182-9ceffac49df5"
   },
   "e3db6dac-5264-404d-afff-169c40e6385d": {
     "appActions": [

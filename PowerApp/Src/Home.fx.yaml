@@ -573,7 +573,7 @@ Home As screen:
         Visible: =varAnnouncementVisible
         Width: =574
         X: =32
-        Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-(CountRows('Announcements List')*90))
+        Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-((CountRows('Announcements List')-1)*90))
         ZIndex: =17
 
         "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":

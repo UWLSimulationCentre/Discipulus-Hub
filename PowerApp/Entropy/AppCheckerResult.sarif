@@ -104,7 +104,7 @@
                 },
                 "region": {
                   "charLength": 31,
-                  "charOffset": 53,
+                  "charOffset": 54,
                   "snippet": {
                     "text": "CountRows('Announcements List')"
                   }

@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: =Set(varUniformView,false)
+    OnStart: =Set(varUniformView,false);Set(varAnnouncementVisible,true)
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

@@ -155,7 +155,7 @@ Home As screen:
         Width: =575
         X: =31
         Y: =132
-        ZIndex: =5
+        ZIndex: =4
 
         AlgText As label:
             Align: =Align.Center
@@ -171,7 +171,7 @@ Home As screen:
         Fill: =RGBA(152, 64, 99, 1)
         Height: =103
         Width: =640
-        ZIndex: =6
+        ZIndex: =5
 
         AlgorithmTitle As label:
             Align: =Align.Center
@@ -189,7 +189,7 @@ Home As screen:
         Width: =575
         X: =31
         Y: =307
-        ZIndex: =8
+        ZIndex: =6
 
         SupportText As label:
             Align: =Align.Center
@@ -208,7 +208,7 @@ Home As screen:
         Width: =575
         X: =31
         Y: =392
-        ZIndex: =9
+        ZIndex: =7
 
         FeedbackText As label:
             Align: =Align.Center
@@ -227,7 +227,7 @@ Home As screen:
         Width: =575
         X: =31
         Y: =480
-        ZIndex: =10
+        ZIndex: =8
 
         safemedtext As label:
             Align: =Align.Center
@@ -246,7 +246,7 @@ Home As screen:
         Visible: =varAlgorithmView
         Width: =640
         Y: =103
-        ZIndex: =12
+        ZIndex: =9
 
         "Algorithm1 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
@@ -414,7 +414,7 @@ Home As screen:
         Height: =1033
         Visible: =varUniformView
         Y: =103
-        ZIndex: =13
+        ZIndex: =10
 
     TopBar_UniformBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
@@ -423,7 +423,7 @@ Home As screen:
         Visible: =varUniformView
         X: =16
         Y: =19
-        ZIndex: =14
+        ZIndex: =11
 
     AlgorithmPDF As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
@@ -432,7 +432,7 @@ Home As screen:
         Height: =1033
         Visible: =varAlgorithmViewPDF
         Y: =103
-        ZIndex: =15
+        ZIndex: =12
 
     TopBar_AlgorithmBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
@@ -441,7 +441,7 @@ Home As screen:
         Visible: =varAlgorithmView
         X: =16
         Y: =19
-        ZIndex: =16
+        ZIndex: =13
 
     TopBar_PDFBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
@@ -450,7 +450,7 @@ Home As screen:
         Visible: =varAlgorithmViewPDF
         X: =16
         Y: =19
-        ZIndex: =17
+        ZIndex: =14
 
     CentreSignIn As groupContainer.manualLayoutContainer:
         Fill: =RGBA(122, 138, 143, 1)
@@ -458,7 +458,7 @@ Home As screen:
         Width: =575
         X: =32
         Y: =566
-        ZIndex: =18
+        ZIndex: =15
 
         CentreSignIn_Label As label:
             Align: =Align.Center
@@ -474,7 +474,7 @@ Home As screen:
         Height: =106
         Width: =640
         Y: =1030
-        ZIndex: =20
+        ZIndex: =16
 
         ReportIssueButton As group:
             Height: =5
@@ -562,4 +562,137 @@ Home As screen:
                 X: =237
                 Y: =67
                 ZIndex: =6
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =Gallery1.AllItemsCount*90
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =varAnnouncementVisible
+        Width: =574
+        X: =32
+        Y: =885-(Gallery1.AllItemsCount*90)/Gallery1.AllItemsCount
+        ZIndex: =17
+
+        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =Gallery1.AllItemsCount*90
+            Items: ='Announcements List'
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =90
+            Width: =574
+            ZIndex: =1
+
+            Title7 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Title
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.TemplateWidth - 86
+                X: =12
+                Y: =9
+                ZIndex: =1
+
+            Subtitle6 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Details
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title7.Width
+                X: =12
+                Y: =34
+                ZIndex: =2
+
+            Separator7 As rectangle:
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =4
+
+            Rectangle7 As rectangle:
+                Fill: =RGBA(255, 255, 0, 1)
+                Height: =Parent.TemplateHeight - Separator7.Height
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =5
+
+            Icon1 As icon.OpenInNewWindow:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =26
+                Icon: =Icon.OpenInNewWindow
+                OnSelect: =Launch(ThisItem.Link)
+                Visible: =If(IsBlank(ThisItem.Link),false,true)
+                Width: =31
+                X: =532
+                Y: =9
+                ZIndex: =6
+
+    Button1 As button:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =51
+        HoverFill: =RGBA(246, 70, 104, 1)
+        OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+        Size: =24
+        Text: ="Announcements"
+        Width: =575
+        X: =31
+        Y: =973
+        ZIndex: =18
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =-502
+        Y: =20
+        ZIndex: =26
+
+        Icon2 As icon.Bell:
+            Color: =RGBA(255, 255, 0, 1)
+            Height: =51
+            Icon: =Icon.Bell
+            OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+            Width: =52
+            X: =554
+            Y: =973
+            ZIndex: =19
+
+        Circle1 As circle:
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =18
+            OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+            Width: =18
+            X: =571
+            Y: =989
+            ZIndex: =20
+
+        Label3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =18
+            OnSelect: =If(varAnnouncementVisible=true,Set(varAnnouncementVisible,false),Set(varAnnouncementVisible,true))
+            Size: =10
+            Text: =Gallery1.AllItemsCount
+            Width: =18
+            X: =571
+            Y: =989
+            ZIndex: =21
 

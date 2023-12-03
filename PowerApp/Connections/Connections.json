@@ -14,6 +14,9 @@
     "datasets": {
       "https://uwloffice365live.sharepoint.com/sites/SimulationCentreUWL": {
         "dataSources": {
+          "Announcements List": {
+            "tableName": "8596f1cc-0476-4755-bef6-5fe99e123b9f"
+          },
           "Student Hub - Document List": {
             "tableName": "c58fc70a-8146-4f55-b839-29272c557d16"
           }
@@ -21,7 +24,8 @@
       }
     },
     "dataSources": [
-      "Student Hub - Document List"
+      "Student Hub - Document List",
+      "Announcements List"
     ],
     "dependencies": {},
     "dependents": [

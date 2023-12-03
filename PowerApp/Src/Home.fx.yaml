@@ -131,7 +131,7 @@ Home As screen:
             Width: =4
             ZIndex: =4
 
-    UniformPolicy As groupContainer.manualLayoutContainer:
+    Main_UniformButton As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
@@ -149,7 +149,7 @@ Home As screen:
             Width: =575
             ZIndex: =1
 
-    Algorithms As groupContainer.manualLayoutContainer:
+    Main_AlgorithmButton As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
@@ -183,7 +183,7 @@ Home As screen:
             Width: =640
             ZIndex: =3
 
-    Support As groupContainer.manualLayoutContainer:
+    Main_SupportButton As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
@@ -202,7 +202,7 @@ Home As screen:
             Width: =575
             ZIndex: =1
 
-    Feedback As groupContainer.manualLayoutContainer:
+    Main_FeedbackButton As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
@@ -221,7 +221,7 @@ Home As screen:
             Width: =575
             ZIndex: =1
 
-    safemed As groupContainer.manualLayoutContainer:
+    Main_SafeMedicateButton As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
@@ -240,7 +240,7 @@ Home As screen:
             Width: =575
             ZIndex: =1
 
-    AlgorithmView As groupContainer.manualLayoutContainer:
+    Main_AlgorithmView As groupContainer.manualLayoutContainer:
         Fill: =RGBA(12, 59, 94, 0.95)
         Height: =1033
         Visible: =varAlgorithmView
@@ -416,7 +416,7 @@ Home As screen:
         Y: =103
         ZIndex: =13
 
-    UniformBack As icon.CancelBadge:
+    TopBar_UniformBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Set(varUniformView,false)
@@ -434,7 +434,7 @@ Home As screen:
         Y: =103
         ZIndex: =15
 
-    AlgorithmBackHome As icon.CancelBadge:
+    TopBar_AlgorithmBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Set(varAlgorithmView,false);Set(varUniformView,false)
@@ -443,7 +443,7 @@ Home As screen:
         Y: =19
         ZIndex: =16
 
-    PDFBack As icon.CancelBadge:
+    TopBar_PDFBack As icon.CancelBadge:
         Color: =RGBA(246, 70, 104, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Set(varAlgorithmViewPDF,false)
@@ -452,7 +452,7 @@ Home As screen:
         Y: =19
         ZIndex: =17
 
-    safemed_1 As groupContainer.manualLayoutContainer:
+    CentreSignIn As groupContainer.manualLayoutContainer:
         Fill: =RGBA(122, 138, 143, 1)
         Height: =70
         Width: =575
@@ -460,7 +460,7 @@ Home As screen:
         Y: =566
         ZIndex: =18
 
-        safemedtext_1 As label:
+        CentreSignIn_Label As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             Height: =70
@@ -468,4 +468,98 @@ Home As screen:
             Text: ="Centre Sign-In System (COMING SOON)"
             Width: =575
             ZIndex: =1
+
+    BottomBar As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
+        Height: =106
+        Width: =640
+        Y: =1030
+        ZIndex: =20
+
+        ReportIssueButton As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =3
+
+            BottomBar_ReportBug As icon.Bug:
+                Height: =52
+                Icon: =Icon.Bug
+                OnSelect: |-
+                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Bug%20Report&body=Below%20are%20the%20details%20of%20a%20bug%2Ferror%20I%20have%20found%20in%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                Width: =49
+                X: =53
+                Y: =15
+                ZIndex: =1
+
+            Label1 As label:
+                Align: =Align.Center
+                Height: =30
+                OnSelect: |-
+                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Bug%20Report&body=Below%20are%20the%20details%20of%20a%20bug%2Ferror%20I%20have%20found%20in%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                Size: =14
+                Text: ="Report an Issue"
+                Width: =147
+                X: =4
+                Y: =67
+                ZIndex: =2
+
+        SuggestionButton As group:
+            Height: =5
+            Width: =5
+            X: =36
+            Y: =9
+            ZIndex: =5
+
+            BottomBar_ReportBug_1 As icon.Bug:
+                Height: =52
+                Icon: =Icon.Mail
+                OnSelect: |-
+                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Feature%20Suggestion&body=Below%20are%20the%20details%20of%20a%20suggestion%20I%20have%20for%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                Width: =49
+                X: =533
+                Y: =15
+                ZIndex: =3
+
+            Label1_1 As label:
+                Align: =Align.Center
+                Height: =30
+                OnSelect: |-
+                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Feature%20Suggestion&body=Below%20are%20the%20details%20of%20a%20suggestion%20I%20have%20for%20the%20Student%20Hub%20Application%3A%0D%0A%0D%0A")
+                Size: =14
+                Text: ="Make Suggestion"
+                Width: =161
+                X: =477
+                Y: =67
+                ZIndex: =4
+
+        SuggestionButton_1 As group:
+            Height: =5
+            Width: =5
+            X: =-437
+            Y: =9
+            ZIndex: =7
+
+            BottomBar_ReportBug_2 As icon.Bug:
+                Height: =52
+                Icon: =Icon.Support
+                OnSelect: |-
+                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Support%20Request&body=I%20would%20like%20some%20help%20with%20the%20Student%20Hub%20App%2C%20below%20are%20details%20of%20my%20support%20request%3A%0D%0A%0D%0A%0D%0A%0D%0A")
+                Width: =49
+                X: =293
+                Y: =15
+                ZIndex: =5
+
+            Label1_2 As label:
+                Align: =Align.Center
+                Height: =30
+                OnSelect: |-
+                    =Launch("mailto:mcnasam@uwl.ac.uk?subject=Student%20Hub%20App%20-%20Support%20Request&body=I%20would%20like%20some%20help%20with%20the%20Student%20Hub%20App%2C%20below%20are%20details%20of%20my%20support%20request%3A%0D%0A%0D%0A%0D%0A%0D%0A")
+                Size: =14
+                Text: ="App Support"
+                Width: =161
+                X: =237
+                Y: =67
+                ZIndex: =6
 

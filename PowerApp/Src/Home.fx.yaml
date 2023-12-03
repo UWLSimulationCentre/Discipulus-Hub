@@ -179,7 +179,7 @@ Home As screen:
             FontWeight: =FontWeight.Semibold
             Height: =103
             Size: =21
-            Text: =If(varUniformView=true,"Centre Uniform Policy",If(varAlgorithmView=true,"Algorithms & Guidelines","Student Hub",If(varAlgorithmViewPDF=true && varAlgorithmView=true,Algorithm2.Selected.DisplayName,"Student Hub")))
+            Text: =If(varAlgorithmView=true && varAlgorithmViewPDF=true,Algorithm1.Selected.Name,If(varAlgorithmView=true,"Algorithms & Guidelines",If(varUniformView=true,"Simulation Centre Uniform Policy","Simulation Centre - Student Hub")))
             Width: =640
             ZIndex: =3
 
@@ -252,6 +252,7 @@ Home As screen:
         HoverBorderColor: =RGBA(88, 115, 171, 1)
         HoverContentColor: =RGBA(255, 255, 255, 1)
         HoverFillColor: =RGBA(47, 81, 151, 1)
+        OnCancel: =false
         OnScan: ='SimulationCentre-CreateAttendance'.Run(Office365Users.MyProfile().MailNickname,User().FullName,First(BarcodeReader1.Barcodes).Value,Now(),"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1")
         PressedBorderColor: =RGBA(56, 96, 178, 1)
         PressedContentColor: =RGBA(56, 96, 178, 1)

@@ -1,0 +1,159 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "sm_sessions",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "sm_session",
+    "MaxGetRowsCount": 500,
+    "Name": "Sessions",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "sm_end": "End",
+      "sm_Lecturer": "Lecturer",
+      "sm_name": "Name",
+      "sm_room": "Room",
+      "sm_session_AsyncOperations": "System Jobs",
+      "sm_session_BulkDeleteFailures": "Bulk Delete Failures",
+      "sm_session_DuplicateBaseRecord": "Duplicate Records (sm_session_DuplicateBaseRecord)",
+      "sm_session_DuplicateMatchingRecord": "Duplicate Records (sm_session_DuplicateMatchingRecord)",
+      "sm_session_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "sm_session_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "sm_session_ProcessSession": "Process Sessions",
+      "sm_session_SyncErrors": "Sync Errors",
+      "sm_sessionid": "Session",
+      "sm_site": "Site",
+      "sm_start": "Start",
+      "sm_Student": "Student",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Sessions",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Sessions (Views)",
+    "Name": "_sm_session_views",
+    "RelatedEntityName": "Sessions",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "6af01f24-b61a-44c3-8306-0367b710a8c9": "Inactive Sessions",
+      "7b096b21-1716-4b0e-8768-53403957913e": "Session Advanced Find View",
+      "a5ed9197-0506-42ab-990a-8c7c68cfcb5a": "Session Lookup View",
+      "b1259636-6c73-4be7-aa92-ae364ddf85c5": "Session Associated View",
+      "cfc4ae44-4e53-4404-ab31-6cdd594f2adb": "Active Sessions"
+    }
+  },
+  {
+    "DisplayName": "Room",
+    "Name": "sm_room",
+    "OptionSetInfoNameMapping": {
+      "100000000": "PH803",
+      "100000001": "PH804",
+      "100000002": "PH805",
+      "100000003": "PH805C",
+      "100000004": "PH900",
+      "100000005": "PH901",
+      "100000006": "PH902",
+      "100000007": "PH903",
+      "100000008": "PH904",
+      "100000009": "PH905",
+      "100000010": "PH906",
+      "100000011": "PH907",
+      "100000012": "CA1",
+      "100000013": "CA2",
+      "100000014": "CA3",
+      "100000015": "WD1",
+      "100000016": "WD2",
+      "100000017": "WD3"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "sm_room",
+        "OptionSetReferenceEntityName": "Sessions"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "sm_room",
+    "RelatedEntityName": "Sessions",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Sessions)",
+    "Name": "sm_session_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Sessions"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Sessions",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Sessions)",
+    "Name": "sm_session_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Sessions"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Sessions",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Site",
+    "Name": "sm_site",
+    "OptionSetInfoNameMapping": {
+      "100000000": "London",
+      "100000001": "Reading"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "sm_site",
+        "OptionSetReferenceEntityName": "Sessions"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "sm_site",
+    "RelatedEntityName": "Sessions",
+    "Type": "OptionSetInfo"
+  }
+]

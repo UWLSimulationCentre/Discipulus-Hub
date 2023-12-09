@@ -1,0 +1,149 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "sm_students",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "sm_student",
+    "MaxGetRowsCount": 500,
+    "Name": "Students",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "sm_cohort": "Cohort",
+      "sm_course": "Course",
+      "sm_name": "Name",
+      "sm_number": "Number",
+      "sm_session_Student_sm_student": "Sessions",
+      "sm_student_AsyncOperations": "System Jobs",
+      "sm_student_BulkDeleteFailures": "Bulk Delete Failures",
+      "sm_student_DuplicateBaseRecord": "Duplicate Records (sm_student_DuplicateBaseRecord)",
+      "sm_student_DuplicateMatchingRecord": "Duplicate Records (sm_student_DuplicateMatchingRecord)",
+      "sm_student_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "sm_student_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "sm_student_ProcessSession": "Process Sessions",
+      "sm_student_SyncErrors": "Sync Errors",
+      "sm_studentid": "Student",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Students",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Students (Views)",
+    "Name": "_sm_student_views",
+    "RelatedEntityName": "Students",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5ed1c809-0f95-4907-bc18-10a33521d5a4": "Student Lookup View",
+      "99ff0b01-666d-4e14-a6b7-68a6470e1a6e": "Student Associated View",
+      "9e1470e1-ab1d-4dfc-98b1-94065484c806": "Active Students",
+      "d7291dd8-1375-4edc-af9c-66cf8d2cd176": "Student Advanced Find View",
+      "f3121d0d-3ce3-4579-8bef-20c6e1d94d47": "Inactive Students"
+    }
+  },
+  {
+    "DisplayName": "Cohort",
+    "Name": "sm_cohort",
+    "OptionSetInfoNameMapping": {
+      "100000000": "SEP-20",
+      "100000001": "APR-21",
+      "100000002": "SEP-21",
+      "100000003": "APR-22",
+      "100000004": "SEP-22",
+      "100000005": "APR-23",
+      "100000006": "SEP-23",
+      "100000007": "APR-24"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "sm_cohort",
+        "OptionSetReferenceEntityName": "Students"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "sm_cohort",
+    "RelatedEntityName": "Students",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Course",
+    "Name": "sm_course",
+    "OptionSetInfoNameMapping": {
+      "100000000": "BNurs (Hons) Adult",
+      "100000001": "BNurs (Hons) Child",
+      "100000002": "BNurs (Hons) LD",
+      "100000003": "BNurs (Hons) MH"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "sm_course",
+        "OptionSetReferenceEntityName": "Students"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "sm_course",
+    "RelatedEntityName": "Students",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Students)",
+    "Name": "sm_student_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Students"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Students",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Students)",
+    "Name": "sm_student_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Students"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Students",
+    "Type": "OptionSetInfo"
+  }
+]

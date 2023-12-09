@@ -320,30 +320,149 @@ Home As screen:
             Width: =575
             ZIndex: =1
 
-    CentreSignIn As groupContainer.manualLayoutContainer:
-        Fill: =RGBA(122, 138, 143, 1)
+    Main_SignInButton As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(246, 70, 104, 1)
         Height: =70
         Width: =575
         X: =32
         Y: =616
         ZIndex: =10
 
-        CentreSignIn_Label As label:
+        SignInButtonText As label:
             Align: =Align.Center
             Color: =RGBA(255, 255, 255, 1)
             FocusedBorderThickness: =1
             Height: =70
+            OnSelect: =Set(varSignInPop,true);Set(varAnnouncementVisible,false)
             Size: =21
             TabIndex: =0
-            Text: ="Centre Sign-In System (COMING SOON)"
+            Text: ="Sign-In to Simulation Session"
             Width: =575
             ZIndex: =1
+
+    SignInPop As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(152, 64, 99, 1)
+        Height: =303
+        Visible: =varSignInPop
+        Width: =575
+        X: =32
+        Y: =616
+        ZIndex: =11
+
+        Dropdown1 As dropdown:
+            Height: =43
+            Items: =Sessions
+            Size: =21
+            Width: =287
+            Y: =89
+            ZIndex: =1
+
+        Label4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Size: =20
+            Text: ="Select Session/Lesson"
+            Width: =287
+            Y: =56
+            ZIndex: =2
+
+        Label4_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =38
+            Size: =21
+            Text: ="Complete Details to Sign-In"
+            Width: =575
+            Y: =6
+            ZIndex: =3
+
+        Dropdown1_1 As dropdown:
+            Height: =43
+            Items: =["Select Campus","London","Reading"]
+            Size: =21
+            Width: =287.5
+            Y: =165
+            ZIndex: =4
+
+        Label4_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Size: =20
+            Text: ="Select Campus"
+            Width: =287.5
+            Y: =132
+            ZIndex: =5
+
+        Dropdown1_2 As dropdown:
+            Default: =
+            Height: =43
+            Items: =["Select Start Date","SEP-20","APR-21","SEP-21","APR-22","SEP-22","APR-23","SEP-23","APR-24"]
+            Size: =21
+            Width: =287.5
+            X: =287
+            Y: =165
+            ZIndex: =6
+
+        Label4_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Size: =20
+            Text: ="Select Cohort"
+            Width: =287.5
+            X: =287
+            Y: =132
+            ZIndex: =7
+
+        Dropdown1_3 As dropdown:
+            Default: =
+            Height: =43
+            Items: =["Select Course","BNurs (Hons) Adult","BNurs (Hons) Child","BNurs (Hons) LD","BNurs (Hons) MH"]
+            Size: =21
+            Width: =287
+            X: =288
+            Y: =89
+            ZIndex: =8
+
+        Label4_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Size: =20
+            Text: ="Select Course"
+            Width: =287
+            X: =288
+            Y: =56
+            ZIndex: =9
+
+        "BarcodeReader1 As 'Barcode Reader'":
+            BorderFillColor: =RGBA(47, 81, 151, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledContentColor: =RGBA(166, 166, 166, 1)
+            DisabledFillColor: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.Edit
+            FillColor: =RGBA(246, 70, 104, 1)
+            Height: =70
+            HoverBorderColor: =RGBA(88, 115, 171, 1)
+            HoverContentColor: =RGBA(255, 255, 255, 1)
+            HoverFillColor: =RGBA(246, 70, 104, 1)
+            OnCancel: =false
+            OnScan: =false
+            PaddingBottom: =5
+            PaddingTop: =10
+            PressedBorderColor: =RGBA(56, 96, 178, 1)
+            PressedContentColor: =RGBA(246, 70, 104, 1)
+            PressedFillColor: =RGBA(255, 255, 255, 1)
+            Text: ="Scan Room Barcode"
+            TextColor: =RGBA(255, 255, 255, 1)
+            Width: =570
+            X: =4
+            Y: =223
+            ZIndex: =10
 
     TopBar As groupContainer.manualLayoutContainer:
         Fill: =RGBA(152, 64, 99, 1)
         Height: =103
         Width: =640
-        ZIndex: =11
+        ZIndex: =12
 
         AlgorithmTitle As label:
             Align: =Align.Center
@@ -364,7 +483,7 @@ Home As screen:
         Visible: =varUniformView
         X: =16
         Y: =19
-        ZIndex: =12
+        ZIndex: =13
 
     TopBar_AlgorithmBack As icon.CancelBadge:
         AccessibleLabel: ="Back Button"
@@ -375,7 +494,7 @@ Home As screen:
         Visible: =varAlgorithmView
         X: =16
         Y: =19
-        ZIndex: =13
+        ZIndex: =14
 
     TopBar_PDFBack As icon.CancelBadge:
         AccessibleLabel: ="Back Button"
@@ -386,7 +505,7 @@ Home As screen:
         Visible: =varAlgorithmViewPDF
         X: =16
         Y: =19
-        ZIndex: =14
+        ZIndex: =15
 
     Main_AlgorithmView As groupContainer.manualLayoutContainer:
         Fill: =RGBA(12, 59, 94, 0.95)
@@ -394,7 +513,7 @@ Home As screen:
         Visible: =varAlgorithmView
         Width: =640
         Y: =103
-        ZIndex: =16
+        ZIndex: =17
 
         "Algorithm1 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
             AccessibleLabel: ="Backend Gallery"
@@ -566,7 +685,7 @@ Home As screen:
         Height: =1033
         Visible: =varAlgorithmViewPDF
         Y: =103
-        ZIndex: =17
+        ZIndex: =18
 
     UniformPDF As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
@@ -575,14 +694,14 @@ Home As screen:
         Height: =927
         Visible: =varUniformView
         Y: =103
-        ZIndex: =18
+        ZIndex: =19
 
     BottomBar As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
         Height: =106
         Width: =640
         Y: =1030
-        ZIndex: =19
+        ZIndex: =20
 
         ReportIssueButton As group:
             Height: =5
@@ -698,7 +817,7 @@ Home As screen:
             Width: =574
             X: =32
             Y: =If(CountRows('Announcements List') = 1, 885-0 , 885-((CountRows('Announcements List')-1)*90))
-            ZIndex: =15
+            ZIndex: =16
 
             "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 AccessibleLabel: ="Notification Gallery"
@@ -795,7 +914,7 @@ Home As screen:
             Width: =575
             X: =31
             Y: =973
-            ZIndex: =20
+            ZIndex: =21
 
         Icon2 As icon.Bell:
             AccessibleLabel: ="Notification Bell"
@@ -807,7 +926,7 @@ Home As screen:
             Width: =52
             X: =554
             Y: =973
-            ZIndex: =21
+            ZIndex: =22
 
         Label3 As label:
             Align: =Align.Center
@@ -821,7 +940,7 @@ Home As screen:
             Width: =18
             X: =571
             Y: =989
-            ZIndex: =22
+            ZIndex: =23
 
     IssueReport As groupContainer.manualLayoutContainer:
         Fill: =RGBA(246, 70, 104, 1)
@@ -833,7 +952,7 @@ Home As screen:
         Visible: =varReportIssue
         Width: =640
         Y: =700
-        ZIndex: =23
+        ZIndex: =24
 
         Label2 As label:
             Align: =Align.Center
@@ -891,7 +1010,7 @@ Home As screen:
         Visible: =varSupportRequest
         Width: =640
         Y: =700
-        ZIndex: =24
+        ZIndex: =25
 
         Label2_1 As label:
             Align: =Align.Center
@@ -949,7 +1068,7 @@ Home As screen:
         Visible: =varMakeSuggestion
         Width: =640
         Y: =700
-        ZIndex: =25
+        ZIndex: =26
 
         Label2_2 As label:
             Align: =Align.Center
@@ -997,28 +1116,16 @@ Home As screen:
             Y: =6
             ZIndex: =4
 
-    "BarcodeReader2 As 'Barcode Reader'":
-        BorderFillColor: =RGBA(47, 81, 151, 1)
-        BorderRadius: =4
-        DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        DisabledContentColor: =RGBA(166, 166, 166, 1)
-        DisabledFillColor: =RGBA(244, 244, 244, 1)
-        DisplayMode: =DisplayMode.Edit
-        FillColor: =RGBA(246, 70, 104, 1)
-        Height: =70
-        HoverBorderColor: =RGBA(88, 115, 171, 1)
-        HoverContentColor: =RGBA(255, 255, 255, 1)
-        HoverFillColor: =RGBA(47, 81, 151, 1)
-        OnCancel: =false
-        OnScan: =false
-        PressedBorderColor: =RGBA(56, 96, 178, 1)
-        PressedContentColor: =RGBA(56, 96, 178, 1)
-        PressedFillColor: =RGBA(255, 255, 255, 1)
-        Text: ="Sign-In to a Session"
-        TextColor: =RGBA(255, 255, 255, 1)
-        Visible: =false
-        Width: =575
-        X: =31
-        Y: =616
-        ZIndex: =26
+    Icon3_1 As icon.CancelBadge:
+        AccessibleLabel: ="Cancel Button"
+        Color: =RGBA(246, 70, 104, 1)
+        Height: =38
+        Icon: =Icon.CancelBadge
+        OnSelect: =Set(varSignInPop,false)
+        TabIndex: =0
+        Visible: =varSignInPop
+        Width: =40
+        X: =16
+        Y: =603
+        ZIndex: =27
 

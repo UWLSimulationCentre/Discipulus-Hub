@@ -83,6 +83,20 @@
     "dependents": [],
     "id": "2856c4af-18a1-46da-af7a-8ca661035a40"
   },
+  "51df299f-c93d-4ca2-88dc-cfbb9003749e": {
+    "connectionRef": {
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "51df299f-c93d-4ca2-88dc-cfbb9003749e"
+  },
   "8b37e45d-ff16-4551-93f0-e83cf46c9a4c": {
     "connectionRef": {
       "displayName": "Microsoft Dataverse",

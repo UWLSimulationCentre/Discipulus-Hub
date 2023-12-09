@@ -377,8 +377,9 @@ Home As screen:
             ZIndex: =3
 
         Dropdown1_1 As dropdown:
+            Default: =
             Height: =43
-            Items: =["Select Campus","London","Reading"]
+            Items: =Sessions
             Size: =21
             Width: =287.5
             Y: =165
@@ -445,7 +446,7 @@ Home As screen:
             HoverContentColor: =RGBA(255, 255, 255, 1)
             HoverFillColor: =RGBA(246, 70, 104, 1)
             OnCancel: =false
-            OnScan: =false
+            OnScan: ='SimulationCentre-AttendanceSubmit'.Run(User().FullName,Office365Users.MyProfile().MailNickname,Dropdown1_2.SelectedText.Value,Dropdown1_3.SelectedText.Value)
             PaddingBottom: =5
             PaddingTop: =10
             PressedBorderColor: =RGBA(56, 96, 178, 1)

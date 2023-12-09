@@ -13,50 +13,6 @@
     "OverridableProperties": {},
     "Version": "1.0"
   },
-  "Barcode Reader": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/powercontrol/BarcodeReader",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": true,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": false,
-    "LastModifiedTimestamp": "0",
-    "Name": "BarcodeReader",
-    "OverridableProperties": {
-      "Barcodes": {
-        "Type": {
-          "EnumString": "",
-          "Kind": "Table",
-          "Name": "Root",
-          "Type": [
-            {
-              "EnumString": "",
-              "Kind": "String",
-              "Name": "Type",
-              "Type": []
-            },
-            {
-              "EnumString": "",
-              "Kind": "String",
-              "Name": "Value",
-              "Type": []
-            }
-          ]
-        },
-        "Version": "1.336"
-      }
-    },
-    "PCFDynamicSchemaForIRRetrieval": {
-      "Barcodes": {
-        "DynamicSchema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"Value\":{\"type\":\"string\"},\"Type\":{\"type\":\"string\"}}}}",
-        "PCFSkipValidation": false
-      }
-    },
-    "TemplateDisplayName": "Barcode Reader",
-    "Version": "1.0.20"
-  },
   "button": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -70,20 +26,6 @@
     "Name": "button",
     "OverridableProperties": {},
     "Version": "2.2.0"
-  },
-  "dropdown": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/dropdown",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": false,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": true,
-    "LastModifiedTimestamp": "0",
-    "Name": "dropdown",
-    "OverridableProperties": {},
-    "Version": "2.3.1"
   },
   "gallery": {
     "CustomGroupControlTemplateName": "",

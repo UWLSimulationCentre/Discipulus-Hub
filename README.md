@@ -1,13 +1,37 @@
-![](https://i.imgur.com/Hoq8m18.png)
-![](https://img.shields.io/github/contributors/UWLSimulationCentre/Discipulus-Hub) 
-![](https://img.shields.io/github/last-commit/UWLSimulationCentre/Discipulus-Hub) 
-![](https://img.shields.io/github/issues/UWLSimulationCentre/Discipulus-Hub) 
+<!-- TOP ROW OF BADGES -->  
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
+<a name="readme-top"></a>
 
-# Disciplulus Hub PowerApp Mobile App
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/UWLSimulationCentre/Discipulus-Hub">
+    <img src="https://i.imgur.com/ItlXVEJ.png" alt="Logo" width="80" height="80">
+  </a>
 
-From Latin, *Discipulus Hub* translates to ***Student Hub***. This mobile application provides students visiting our [Simulation Centres](https://www.uwl.ac.uk/business/university-venue-hire/medical-simulation-centre), a range of tools, resources and guidelines in one, easy to use mobile application.
+<h3 align="center">Discipulus Hub PowerApp</h3>
 
+  <p align="center">
+    Easy to use mobile application hub for students
+    <br />
+    <a href="https://github.com/UWLSimulationCentre/Discipulus-Hub"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/UWLSimulationCentre/Discipulus-Hub">View Demo</a>
+    ·
+    <a href="https://github.com/UWLSimulationCentre/Discipulus-Hub/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/UWLSimulationCentre/Discipulus-Hub/issues">Request Feature</a>
+  </p>
+</div>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
 <div align="center">
   <kbd>
     <img src="https://i.imgur.com/qYyy9Cn.png" />
@@ -16,9 +40,9 @@ From Latin, *Discipulus Hub* translates to ***Student Hub***. This mobile applic
   </kbd>
 </div>
 
-## Description
-
 Trying to share resources with students and staff is often quite challenging. The use of long emails and informational documents creates inequity with people who learn through the use of more modern methods. This mobile application provides an easy-to-use and access option for students and staff to access important information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Features
 
@@ -30,6 +54,8 @@ Trying to share resources with students and staff is often quite challenging. Th
 ### Built with
 
 - MS PowerApps
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting started
 
@@ -47,14 +73,53 @@ Used by academic staff, students and visitors to access useful information and g
 
 ## Back matter
 
-### Legal disclaimer
+<!-- ROADMAP -->
+### Roadmap
 
-Usage of this tool for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local and national laws. Developers assume no liability and are not responsible for any misuse or damage caused by this repository.
+- [ ] Finalise Documentation.
+- [ ] Implement Dark Mode
+- [ ] Release V2.0.0
 
-### Acknowledgements
+See the [open issues](https://github.com/UWLSimulationCentre/Discipulus-Hub/issues) for a full list of proposed features (and known issues).
 
-[@smcnab1](https://github.com/smcnab1) for building application.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+<a name="contributing"></a>
+
+### Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement" or "feature-request".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ### License
 
 This project is licensed under the [MIT License](LICENSE.md).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/UWLSimulationCentre/Discipulus-Hub.svg?style=for-the-badge
+[contributors-url]: https://github.com/UWLSimulationCentre/Discipulus-Hub/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/UWLSimulationCentre/Discipulus-Hub.svg?style=for-the-badge
+[forks-url]: https://github.com/UWLSimulationCentre/Discipulus-Hub/network/members
+[stars-shield]: https://img.shields.io/github/stars/UWLSimulationCentre/Discipulus-Hub.svg?style=for-the-badge
+[stars-url]: https://github.com/smcnab1/Discipulus-Hub/stargazers
+[issues-shield]: https://img.shields.io/github/issues/UWLSimulationCentre/Discipulus-Hub.svg?style=for-the-badge
+[issues-url]: https://github.com/UWLSimulationCentre/Discipulus-Hub/issues
+[license-shield]: https://img.shields.io/github/license/UWLSimulationCentre/Discipulus-Hub.svg?style=for-the-badge
+[license-url]: https://github.com/UWLSimulationCentre/Discipulus-Hub/blob/master/LICENSE.md
+[email-badge]: https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[email-url]: mailto:SimulationEnquiries@uwl.ac.uk
+[git-badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[git-url]: https://github.com/UWLSimulationCentre
